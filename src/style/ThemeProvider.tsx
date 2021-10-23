@@ -1,7 +1,4 @@
-import {
-  ThemeProvider as ThemeProviderComponent,
-  DefaultTheme,
-} from "styled-components";
+import { ThemeProvider as ThemeProviderComponent, DefaultTheme } from "styled-components";
 import { ThemeProviderProps } from "./constants";
 
 const theme: DefaultTheme = {
@@ -12,9 +9,7 @@ const theme: DefaultTheme = {
 };
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  return (
-    <ThemeProviderComponent theme={theme}>{children}</ThemeProviderComponent>
-  );
+  return <ThemeProviderComponent theme={theme}>{children}</ThemeProviderComponent>;
 };
 
 export default ThemeProvider;
