@@ -1,5 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
+// suggestions fonts (from Google Fonts)
+// Amatic SC
+// Unna
+// Eczar
+
+
+
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;

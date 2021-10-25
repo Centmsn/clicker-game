@@ -1,8 +1,15 @@
+import StatsSection from "components/StatsSection";
 import React from "react";
+import Title from "components/generics/Title";
 
 const App = () => {
-  console.log("afsfsa");
-  return <div key="dasdsadasdsa">Hello there</div>;
+  return (
+    <>
+      <StatsSection>
+        <Title>Stats</Title>
+      </StatsSection>
+    </>
+  );
 };
 
 export default App;
