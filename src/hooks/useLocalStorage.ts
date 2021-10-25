@@ -19,7 +19,7 @@ const LOCAL_STORAGE_APP_KEY = "clickerGame";
 export const useLocalStorage = () => {
   const getAllItemsFromLS = (): LocalStorage | void => {
     if (isInBrowser()) {
-      return JSON.parse(localStorage.getItem(LOCAL_STORAGE_APP_KEY) || "");
+      return JSON.parse(localStorage.getItem(LOCAL_STORAGE_APP_KEY) || JSON.stringify({}));
     }
   };
 
@@ -38,7 +38,7 @@ export const useLocalStorage = () => {
       const currectLsValue = getAllItemsFromLS();
       const newLsValue = { ...currectLsValue, [key]: value };
 
-      localStorage.setItem(key, JSON.stringify(newLsValue));
+      localStorage.setItem(LOCAL_STORAGE_APP_KEY, JSON.stringify(newLsValue));
     }
   };
 
