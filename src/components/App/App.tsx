@@ -1,6 +1,7 @@
 import StatsSection from "components/StatsSection";
 import React from "react";
 import Title from "components/generics/Title";
+import OptionsSection from "components/OptionsSection";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <StatsSection>
         <Title>Stats</Title>
       </StatsSection>
+      <OptionsSection />
     </>
   );
 };
