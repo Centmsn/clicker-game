@@ -9,6 +9,13 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
     <P.Wrapper>
       <Title>Statistics</Title>
       <Stats />
+      <Stats />
+      <Stats />
+      <Stats />
+      <Stats />
+      <Stats />
+      <Stats />
+      <Stats />
     </P.Wrapper>
   );
 };
