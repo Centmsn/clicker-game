@@ -1,3 +1,3 @@
 export interface StatsProps {
-  //   stat: string;
+  stat: string;
 }

@@ -1,8 +1,8 @@
 import * as P from "./parts";
+import { StatsProps } from "./constants";
 
-const Stats = () => {
-  // tu chciałem zamieścić przekazywanie jaki stat ma być wyświetlany, lecz poległem na ts
-  return <P.Stat>damage per second: 10048398</P.Stat>;
+const Stats = ({ stat }: StatsProps) => {
+  return <P.Stat>{stat}</P.Stat>;
 };
 
 export default Stats;

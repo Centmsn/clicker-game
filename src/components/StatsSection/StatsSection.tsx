@@ -8,14 +8,9 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
   return (
     <P.Wrapper>
       <Title>Statistics</Title>
-      <Stats />
-      <Stats />
-      <Stats />
-      <Stats />
-      <Stats />
-      <Stats />
-      <Stats />
-      <Stats />
+      <Stats stat={"dmg per second"} />
+      <Stats stat={"money per second"} />
+      <Stats stat={"overal kills"} />
     </P.Wrapper>
   );
 };
