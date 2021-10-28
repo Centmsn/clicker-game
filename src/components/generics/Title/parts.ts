@@ -5,4 +5,5 @@ export const Title = styled.header`
   font-size: 38px;
   text-align: center;
   padding-top: 30px;
+  margin-bottom: 30px;
 `;

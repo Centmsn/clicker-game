@@ -1,13 +1,12 @@
 import { Title } from "components/generics/Title/parts";
-import React from "react";
 import * as P from "./parts";
 
-const OptionsSection = () => {
+const MainSection = () => {
   return (
     <P.Wrapper>
-      <Title>Options</Title>
+      <Title>Dungeon Clicker</Title>
     </P.Wrapper>
   );
 };
 
-export default OptionsSection;
+export default MainSection;
