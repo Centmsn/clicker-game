@@ -12,7 +12,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
       <Stats stat={"dmg per second"} />
       <Stats stat={"money per second"} />
       <Stats stat={"overal kills"} />
-      <Button variant={"blue"}>click me</Button>
+      <Button variant={"pink"}>click me</Button>
     </P.Wrapper>
   );
 };
