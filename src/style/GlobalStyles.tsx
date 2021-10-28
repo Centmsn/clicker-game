@@ -5,8 +5,6 @@ import { createGlobalStyle } from "styled-components";
 // Unna
 // Eczar
 
-
-
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
