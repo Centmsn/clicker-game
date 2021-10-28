@@ -3,9 +3,11 @@ import { ThemeProviderProps } from "./constants";
 
 const theme: DefaultTheme = {
   colors: {
-    primary: "rgb(200, 200, 200)",
-    secondary: "rgb(100, 100, 100",
-    primaryDark: "#349394",
+    white: "#F5F5FA",
+    primary: "#F7E9D0",
+    primaryDark: "#F5CC84",
+    secondary: "#C2A169",
+    secondaryDark: "#756C5B",
   },
 };
 
