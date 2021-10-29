@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+<<<<<<< Updated upstream
 // suggestions fonts (from Google Fonts)
 // Amatic SC
 // Unna
@@ -7,6 +8,8 @@ import { createGlobalStyle } from "styled-components";
 
 
 
+=======
+>>>>>>> Stashed changes
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
