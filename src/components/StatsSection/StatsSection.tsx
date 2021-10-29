@@ -5,6 +5,7 @@ import * as P from "./parts";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
 
+
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
   return (
     <P.Wrapper>
