@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
 export const Image = styled.img`
   height: 100%;
   transition: 0.3s;
+
   &:hover {
     cursor: pointer;
   }

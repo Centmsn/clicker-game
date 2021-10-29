@@ -9,9 +9,9 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
   return (
     <P.Wrapper>
       <Title>Statistics</Title>
-      <Stats stat={"dmg per second"} />
-      <Stats stat={"money per second"} />
-      <Stats stat={"overal kills"} />
+      <Stats label="dmg per second" />
+      <Stats label="money per second" />
+      <Stats label="overal kills" />
       <Button variant="variantOne">click me</Button>
     </P.Wrapper>
   );

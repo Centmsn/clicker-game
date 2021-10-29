@@ -6,8 +6,9 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.colors.variantOne.secondary};
   color: black;
   transition: 0.3s;
+
   &:hover {
-    background-color: blanchedalmond;
+    background-color: ${(props) => props.theme.colors.variantOne.primary};
     cursor: pointer;
   }
 `;

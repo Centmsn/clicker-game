@@ -1,4 +1,4 @@
-import centaur from "../../assets/centaur.png";
+import centaur from "assets/centaur.png";
 import * as P from "./parts";
 
 const Unit = () => {

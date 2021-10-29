@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import caveBackground from "../../assets/caveBackground.jpg";
+import caveBackground from "assets/caveBackground.jpg";
 
 export const Wrapper = styled.div`
   width: 60vw;
