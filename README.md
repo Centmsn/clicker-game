@@ -8,3 +8,17 @@ It's a typical clicker game - the more you click the more you get. _Description 
 
 ### Basic redux and context structure
 ![image](https://user-images.githubusercontent.com/65851661/139313663-8e59640b-ad38-44f2-b512-2b049a91778b.png)
+
+### Import order assumptions
+
+🔶 external libraries (react has priority)
+
+🔶 generic components
+
+🔶 specific components
+
+🔶 custom hooks, utils etc.
+
+🔶 assets
+
+🔶 parts
