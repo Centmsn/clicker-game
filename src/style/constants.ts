@@ -7,8 +7,6 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       primaryDark: string;
-      variantOne: any;
-      variantTwo: any;
     };
   }
 }
