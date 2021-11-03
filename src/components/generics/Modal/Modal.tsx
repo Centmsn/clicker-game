@@ -1,12 +1,12 @@
 import { ModalProps } from "./constants";
 import * as P from "./parts";
 
-const Modal = ({ content, toggleModal }: ModalProps) => {
+const Modal = ({ children, toggleModal }: ModalProps) => {
   return (
     <>
       <P.Overlay onClick={() => toggleModal(false)}></P.Overlay>
       <P.ModalWindow>
-        {content}
+        {children}
         <P.CloseButton onClick={() => toggleModal(false)}>✖️</P.CloseButton>
       </P.ModalWindow>
     </>

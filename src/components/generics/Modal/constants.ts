@@ -1,4 +1,4 @@
 export interface ModalProps {
-  content: string;
+  children: any;
   toggleModal: (arg: boolean) => void;
 }

@@ -1,3 +1,1 @@
-export interface StatsSectionProps {
-  toggleModal: (arg: boolean) => void;
-}
+export interface StatsSectionProps {}

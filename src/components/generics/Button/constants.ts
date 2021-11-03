@@ -1,4 +1,4 @@
 export interface ButtonProps {
   variant: any;
-  click: any;
+  onClick: any;
 }

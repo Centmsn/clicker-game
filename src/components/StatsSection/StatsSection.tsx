@@ -5,14 +5,14 @@ import * as P from "./parts";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
 
-const StatsSection = ({ toggleModal }: StatsSectionProps): JSX.Element => {
+const StatsSection = (): JSX.Element => {
   return (
     <P.Wrapper>
       <Title>Statistics</Title>
       <Stats label="dmg per second" />
       <Stats label="money per second" />
       <Stats label="overal kills" />
-      <Button click={() => toggleModal(true)} variant="variantOne">
+      <Button onClick={() => {}} variant="variantOne">
         click me
       </Button>
     </P.Wrapper>
