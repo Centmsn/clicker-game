@@ -2,8 +2,9 @@ import * as P from "./parts";
 import { ButtonProps } from "components/generics/Button/constants";
 import { PropsWithChildren } from "react";
 
-const Button = ({ children }: PropsWithChildren<ButtonProps>) => {
-  return <P.Button>{children}</P.Button>;
+// TODO: variant should change button style - define button styles
+const Button = ({ children, variant = "primary" }: PropsWithChildren<ButtonProps>) => {
+  return <P.Button variant={variant}>{children}</P.Button>;
 };
 
 export default Button;

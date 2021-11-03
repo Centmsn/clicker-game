@@ -5,8 +5,13 @@ import * as P from "./parts";
 const MainSection = () => {
   return (
     <P.Wrapper>
-      <Title>Dungeon Clicker</Title>
-      <Unit />
+      <P.TitleWrapper>
+        <Title>Dungeon Clicker</Title>
+      </P.TitleWrapper>
+
+      <P.ButtonWrapper>
+        <Unit />
+      </P.ButtonWrapper>
     </P.Wrapper>
   );
 };

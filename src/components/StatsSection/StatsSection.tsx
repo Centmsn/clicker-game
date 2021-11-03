@@ -1,10 +1,9 @@
 import { PropsWithChildren } from "react";
-import { StatsSectionProps } from "./constants";
 import Title from "components/generics/Title";
-import * as P from "./parts";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
-
+import { StatsSectionProps } from "./constants";
+import * as P from "./parts";
 
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
   return (
@@ -13,7 +12,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
       <Stats label="dmg per second" />
       <Stats label="money per second" />
       <Stats label="overal kills" />
-      <Button variant="variantOne">click me</Button>
+      <Button variant="primary">click me</Button>
     </P.Wrapper>
   );
 };
