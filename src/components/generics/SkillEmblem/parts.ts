@@ -3,8 +3,7 @@ import woodenSword from "assets/Temporary_Assets/woodenSword.png";
 
 export const SkillIcon = styled.div`
   width: 15%;
-  height: 100%;
-  /* filter: ${{}}grayscale(1); */
+  height: 50%;
   background-color: ${({ theme }) => theme.colors.primary};
   border: 1px black solid;
   background-image: url(${woodenSword});

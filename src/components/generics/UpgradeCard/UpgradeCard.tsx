@@ -1,24 +1,21 @@
-import SkillEmblement from "../SkillEmblement";
-import { PropsWithChildren } from "react";
-import { UpgradeCardProps } from "./constants";
+import SkillEmblem from "components/generics/SkillEmblem";
 import * as P from "./parts";
 
 const UpgradeCard = () => {
   return (
     <P.Card>
-      <P.HeroName>Magnus</P.HeroName>
-      <P.HeroLevel>level 27</P.HeroLevel>
+      <P.HeroInfo>Magnus level 27</P.HeroInfo>
       <P.HorizontalLine />
       <P.HeroPortrait />
       <P.LevelUpSection>
         levelUp <P.LevelUpButton>🆙</P.LevelUpButton> cost: 12k 🪙
       </P.LevelUpSection>
       <P.UpgradesSkillsWrapper>
-        <SkillEmblement />
-        <SkillEmblement />
-        <SkillEmblement />
-        <SkillEmblement />
-        <SkillEmblement />
+        <SkillEmblem />
+        <SkillEmblem />
+        <SkillEmblem />
+        <SkillEmblem />
+        <SkillEmblem />
       </P.UpgradesSkillsWrapper>
     </P.Card>
   );
