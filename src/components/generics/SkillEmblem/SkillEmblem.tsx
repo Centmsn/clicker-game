@@ -1,7 +1,7 @@
 import * as P from "./parts";
 
-const SkillEmblement = () => {
+const SkillEmblem = () => {
   return <P.SkillIcon />;
 };
 
-export default SkillEmblement;
+export default SkillEmblem;

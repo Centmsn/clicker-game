@@ -1,1 +1,1 @@
-export interface SkillEmblementProps {}
+export interface SkillEmblemProps {}
