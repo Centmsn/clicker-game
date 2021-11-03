@@ -28,6 +28,7 @@ export const mainWalletSlice = createSlice({
   },
 });
 
-export const { addToWallet, removeFromWallet, clearWallet } = mainWalletSlice.actions;
+export const { addToWallet, removeFromWallet, clearWallet, clearIncrement, decreaseIncrement, increaseIncrement } =
+  mainWalletSlice.actions;
 
 export default mainWalletSlice.reducer;
