@@ -1,6 +1,5 @@
 import { RootState } from "state";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { createSelector } from "reselect";
 import { calcPrice } from "utils/calcPrice";
 import { validateAmount } from "./utils";
 import { HERO_T_0, HeroBase } from "constants/Heroes";
@@ -26,7 +25,7 @@ export const upgradesSlice = createSlice({
 
         const selectedUpgradeTier = selectedHero.upgrades[tier];
 
-        selectedUpgradeTier.level += amount;
+        selectedUpgradeTier.upgradeLevel += amount;
         selectedUpgradeTier.price = calcPrice(
           selectedUpgradeTier.price,
           selectedUpgradeTier.upgradePriceIncrement,
@@ -45,7 +44,7 @@ export const upgradesSlice = createSlice({
       const selectedHero = state.find((hero) => hero.id === heroId);
 
       if (selectedHero) {
-        selectedHero.level += amount;
+        selectedHero.heroLevel += amount;
         selectedHero.price = calcPrice(selectedHero.price, selectedHero.heroPriceIncrement, amount);
       }
     },

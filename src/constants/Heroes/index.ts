@@ -6,7 +6,7 @@ export interface HeroBase {
   id: string;
   incrementPerSecond: number;
   name: HeroNames;
-  level: number;
+  heroLevel: number;
   price: number;
   heroPriceIncrement: number;
   upgrades: Array<U.UpgradeBase>;
@@ -15,7 +15,7 @@ export interface HeroBase {
 export const HERO_T_0: HeroBase = {
   id: "hT0",
   incrementPerSecond: 1,
-  level: 0,
+  heroLevel: 0,
   price: 25,
   name: "Hero 1",
   heroPriceIncrement: 1.1,
