@@ -1,3 +1,8 @@
+export type ButtonVariant = "primary" | "secondary";
 export interface ButtonProps {
-  variant: any;
+  variant?: ButtonVariant;
+}
+
+export interface StyledButtonProps {
+  variant: ButtonVariant;
 }
