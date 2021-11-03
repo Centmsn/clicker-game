@@ -1,5 +1,5 @@
-import { Title } from "components/generics/Title/parts";
 import React from "react";
+import { Title } from "components/generics/Title/parts";
 import * as P from "./parts";
 
 const OptionsSection = () => {

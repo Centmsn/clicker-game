@@ -14,7 +14,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
       <Title>Statistics</Title>
       <Stats label={`Gold: ${wallet.value}`} />
       <Stats label={`Gold per second: ${wallet.incrementPerSecond}`} />
-      <Button variant="variantOne">click me</Button>
+      <Button variant="primary">click me</Button>
     </P.Wrapper>
   );
 };

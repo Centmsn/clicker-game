@@ -1,15 +1,19 @@
-import centaur from "assets/centaur.png";
+import { useState } from "react";
 import * as P from "./parts";
 
 const Unit = () => {
-  const clickUnit = (e: any, scale: any) => {
-    e.target.style.transform = `scale(${scale})`;
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+
+  const handleMainButtonClick = () => {
+    setIsButtonClicked((prev) => !prev);
   };
 
   return (
-    <P.Wrapper>
-      <P.Image onMouseDown={(e) => clickUnit(e, 0.9)} onMouseUp={(e) => clickUnit(e, 1)} alt="centaur" src={centaur} />
-    </P.Wrapper>
+    <P.Button
+      onMouseDown={handleMainButtonClick}
+      onMouseUp={handleMainButtonClick}
+      isClicked={isButtonClicked}
+    ></P.Button>
   );
 };
 
