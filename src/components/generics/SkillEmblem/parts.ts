@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { StyledSkillEmblemProps } from "./constants";
 import woodenSword from "assets/Temporary_Assets/woodenSword.png";
 
-export const SkillIcon = styled.div`
+export const SkillIcon = styled.div<StyledSkillEmblemProps>`
   width: 15%;
   height: 50%;
   background-color: ${({ theme }) => theme.colors.primary};
@@ -11,6 +12,8 @@ export const SkillIcon = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   transition: 0.3s;
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
 
   &:hover {
     cursor: pointer;
