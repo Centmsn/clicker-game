@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import caveBackground from "assets/caveBackground.jpg";
+import coinsBackground from "assets/Backgrounds/coinsBackground.jpg";
 
 export const Wrapper = styled.div`
   grid-area: 1/3/11/11;
-  background-image: url(${caveBackground});
+  background-image: url(${coinsBackground});
   background-position: bottom;
   border-left: solid 6px black;
   border-right: solid 6px black;

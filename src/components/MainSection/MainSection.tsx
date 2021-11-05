@@ -1,5 +1,5 @@
 import { Title } from "components/generics/Title/parts";
-import Unit from "components/Unit";
+import Treasure from "components/Treasure";
 import * as P from "./parts";
 
 const MainSection = () => {
@@ -10,7 +10,7 @@ const MainSection = () => {
       </P.TitleWrapper>
 
       <P.ButtonWrapper>
-        <Unit />
+        <Treasure />
       </P.ButtonWrapper>
     </P.Wrapper>
   );
