@@ -1,14 +1,6 @@
 import styled from "styled-components";
 import heroPortrait from "assets/Temporary_Assets/hero.png";
 
-export const LevelUpButton = styled.button`
-  font-size: 40px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 export const Card = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -23,7 +15,7 @@ export const Card = styled.div`
 
 export const HeroInfo = styled.p`
   grid-area: 1/1/2/7;
-  font-size: 32px;
+  font-size: 24px;
 `;
 
 export const HorizontalLine = styled.div`
@@ -32,22 +24,15 @@ export const HorizontalLine = styled.div`
 `;
 
 export const HeroPortrait = styled.div`
-  grid-area: 2/1/5/4;
-  margin-top: 10px;
+  grid-area: 3/1/6/3;
   background-image: url(${heroPortrait});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 `;
 
-export const LevelUpSection = styled.div`
-  grid-area: 2/4/5/7;
-  font-size: 26px;
-`;
-
 export const UpgradesSkillsWrapper = styled.div`
-  grid-area: 5/1/7/7;
+  grid-area: 2/3/7/7;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 `;

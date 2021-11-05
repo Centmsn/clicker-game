@@ -7,9 +7,7 @@ const UpgradeCard = () => {
       <P.HeroInfo>Magnus level 27</P.HeroInfo>
       <P.HorizontalLine />
       <P.HeroPortrait />
-      <P.LevelUpSection>
-        levelUp <P.LevelUpButton>🆙</P.LevelUpButton> cost: 12k 🪙
-      </P.LevelUpSection>
+
       <P.UpgradesSkillsWrapper>
         <SkillEmblem />
         <SkillEmblem />
