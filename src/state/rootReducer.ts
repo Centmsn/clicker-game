@@ -5,6 +5,6 @@ import MainWalletReducer from "./MainWalletSlice";
 export type RootState = ReturnType<typeof rootReducer>;
 
 export const rootReducer = combineReducers({
-  upgrades: UpgradesReducer,
+  heroes: UpgradesReducer,
   wallet: MainWalletReducer,
 });
