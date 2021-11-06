@@ -36,3 +36,26 @@ export const UpgradesSkillsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const LevelUpButton = styled.button`
+  grid-area: 1/6/2/7;
+
+  margin: 5px;
+  padding: 0 15px;
+  border: solid 2px ${({ theme }) => theme.colors.primary};
+  border-radius: 10%;
+
+  background-color: ${({ theme }) => theme.colors.primaryDark};
+
+  color: ${({ theme }) => theme.colors.primary};
+
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+
+    background-color: ${({ theme }) => theme.colors.primary};
+
+    color: ${({ theme }) => theme.colors.primaryDark};
+  }
+`;

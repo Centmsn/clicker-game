@@ -5,6 +5,7 @@ const UpgradeCard = () => {
   return (
     <P.Card>
       <P.HeroInfo>Magnus level 27</P.HeroInfo>
+      <P.LevelUpButton>level up</P.LevelUpButton>
       <P.HorizontalLine />
       <P.HeroPortrait />
 
