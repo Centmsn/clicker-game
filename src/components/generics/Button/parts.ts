@@ -4,8 +4,11 @@ import { StyledButtonProps } from "./constants";
 export const Button = styled.button<StyledButtonProps>`
   width: 200px;
   height: 50px;
+
   background-color: ${({ theme }) => theme.colors.secondary};
+
   color: black;
+
   transition: 0.3s;
 
   &:hover {
