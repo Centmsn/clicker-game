@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState, useRef } from "react";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
+import { isNumber } from "utils/isNumber";
 import { addToWallet } from "state";
 import { GameContextValue, GameContextProviderProps, TIME_BETWEEN_INTERVAL_TICK } from "./constants";
-import { isNumber } from "utils/isNumber";
 
 const GameContext = createContext({} as GameContextValue);
 
@@ -12,6 +12,10 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const incrementPerSecond = useAppSelector((state) => state.wallet.incrementPerSecond);
   const callbackRef = useRef<() => void>();
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    callbackRef.current = handleIntervalTick;
+  });
 
   /**
    * Clears game interval - returns true if cleared / false if not (interval was not active)
@@ -26,10 +30,6 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
 
     return false;
   };
-
-  useEffect(() => {
-    callbackRef.current = handleIntervalTick;
-  });
 
   /**
    * Starts game interval - returns true if started / false if not (interval already running)
