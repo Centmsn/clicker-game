@@ -8,7 +8,5 @@ export const Wrapper = styled.div`
   align-items: center;
 
   background-color: ${({ theme }) => theme.colors.primary};
-
-  font-size: 2rem;
-  color: ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.black};
 `;

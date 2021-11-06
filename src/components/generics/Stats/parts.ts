@@ -10,8 +10,8 @@ export const Stat = styled.div`
   margin: 10px 0;
   border: black solid 2px;
 
-  background-color: #fff;
-
   font-size: 1.1rem;
-  color: ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.black};
+  
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
