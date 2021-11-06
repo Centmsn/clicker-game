@@ -9,11 +9,13 @@ const GlobalStyle = createGlobalStyle`
 
     button {
         border: none;
+
         background: none;
     }
 
     input {
         border: none;
+        
         background: none;
     }
 `;
