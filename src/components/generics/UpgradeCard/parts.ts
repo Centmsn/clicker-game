@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { StyledLevelUpBtn } from "./constants";
-import heroPortrait from "assets/Temporary_Assets/hero.png";
+import { StyledLevelUpBtn, HeroProps } from "./constants";
 
 export const LevelUpButton = styled.button<StyledLevelUpBtn>`
-  font-size: 40px;
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+
+  font-size: 40px;
 
   &:hover {
     cursor: pointer;
@@ -21,6 +21,7 @@ export const Card = styled.div`
   height: 25%;
   border: solid 4px ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
+  margin-bottom: 20px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
@@ -34,12 +35,12 @@ export const HeroInfo = styled.p`
   font-size: 32px;
 `;
 
-export const HeroPortrait = styled.div`
+export const HeroPortrait = styled.div<HeroProps>`
   grid-area: 2/1/5/4;
 
   margin-top: 10px;
 
-  background-image: url(${heroPortrait});
+  background-image: url(${(props) => props.portrait});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

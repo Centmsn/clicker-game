@@ -1,6 +1,9 @@
 import * as U from "constants/Upgrades";
+import Hero1 from "assets/Hero_Assets/Pink_Monster.png";
+import Hero2 from "assets/Hero_Assets/Owlet_Monster.png";
+import Hero3 from "assets/Hero_Assets/Dude_Monster.png";
 
-export type HeroNames = "Hero 1" | "Hero 2" | "Hero 3";
+export type HeroNames = "Akio" | "Eferd" | "Ingrid";
 
 export interface HeroBase {
   id: string;
@@ -10,6 +13,7 @@ export interface HeroBase {
   price: number;
   heroPriceIncrement: number;
   upgrades: Array<U.UpgradeBase>;
+  portrait: string;
 }
 
 export const HERO_T_0: HeroBase = {
@@ -17,9 +21,10 @@ export const HERO_T_0: HeroBase = {
   incrementPerSecond: 1,
   heroLevel: 0,
   price: 25,
-  name: "Hero 1",
+  name: "Akio",
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
+  portrait: Hero1,
 };
 
 export const HERO_T_1: HeroBase = {
@@ -27,9 +32,10 @@ export const HERO_T_1: HeroBase = {
   incrementPerSecond: 5,
   heroLevel: 0,
   price: 100,
-  name: "Hero 2",
+  name: "Eferd",
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
+  portrait: Hero2,
 };
 
 export const HERO_T_2: HeroBase = {
@@ -37,7 +43,8 @@ export const HERO_T_2: HeroBase = {
   incrementPerSecond: 20,
   heroLevel: 0,
   price: 850,
-  name: "Hero 3",
+  name: "Ingrid",
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
+  portrait: Hero3,
 };
