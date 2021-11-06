@@ -1,11 +1,21 @@
-import { createContext, useState } from "react";
-import { GameContextValue, GameContextProviderProps, TIME_BETWEEN_INTERVAL_TICK } from "./constants";
+import { createContext, useEffect, useState, useRef } from "react";
+import { useAppDispatch } from "hooks/useAppDispatch";
+import { useAppSelector } from "hooks/useAppSelector";
 import { isNumber } from "utils/isNumber";
+import { addToWallet } from "state";
+import { GameContextValue, GameContextProviderProps, TIME_BETWEEN_INTERVAL_TICK } from "./constants";
 
 const GameContext = createContext({} as GameContextValue);
 
 export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const [gameIntervalId, setGameIntervalId] = useState<number | null>(null);
+  const incrementPerSecond = useAppSelector((state) => state.wallet.incrementPerSecond);
+  const callbackRef = useRef<() => void>();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    callbackRef.current = handleIntervalTick;
+  });
 
   /**
    * Clears game interval - returns true if cleared / false if not (interval was not active)
@@ -27,16 +37,16 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const startGameInterval = () => {
     //  only if interval is NOT running
     if (isNumber(gameIntervalId)) return gameIntervalId;
-
-    const intervalId = window.setInterval(handleIntervalTick, TIME_BETWEEN_INTERVAL_TICK);
+    const intervalId = window.setInterval(
+      () => callbackRef.current && callbackRef.current(),
+      TIME_BETWEEN_INTERVAL_TICK
+    );
     setGameIntervalId(intervalId);
-
     return intervalId;
   };
 
   const handleIntervalTick = () => {
-    //  TODO: add logic to handle interval ticks
-    console.log("Interval is running!");
+    dispatch(addToWallet(incrementPerSecond));
   };
 
   return (
