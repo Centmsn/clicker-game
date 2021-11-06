@@ -7,7 +7,7 @@ declare module "styled-components" {
       primary: string;
       secondary: string;
       primaryDark: string;
-      textColor: string;
+      black: string;
     };
   }
 }
