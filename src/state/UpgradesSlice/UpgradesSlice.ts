@@ -2,9 +2,9 @@ import { RootState } from "state";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { calcPrice } from "utils/calcPrice";
 import { validateAmount } from "./utils";
-import { HERO_T_0, HeroBase } from "constants/Heroes";
+import { HERO_T_0, HeroBase, HERO_T_1, HERO_T_2 } from "constants/Heroes";
 
-const initialState: Array<HeroBase> = [HERO_T_0];
+const initialState: Array<HeroBase> = [HERO_T_0, HERO_T_1, HERO_T_2];
 
 export const upgradesSlice = createSlice({
   name: "Upgrades",
