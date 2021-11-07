@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledLevelUpButtonProps } from "./constants";
 import woodenSword from "assets/Temporary_Assets/woodenSword.png";
 
 export const Wrapper = styled.div`
@@ -10,25 +11,20 @@ export const Wrapper = styled.div`
   font-size: 14px;
 `;
 
-export const SkillIcon = styled.div`
+export const SkillEmblem = styled.div`
   width: 30%;
   height: 90%;
-  background-color: ${({ theme }) => theme.colors.primary};
+
   border: 1px black solid;
+
+  background-color: ${({ theme }) => theme.colors.primary};
   background-image: url(${woodenSword});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transition: 0.3s;
-
-  &:hover {
-    cursor: pointer;
-    box-shadow: 0 0 2px 4px ${({ theme }) => theme.colors.primary};
-    background-color: ${({ theme }) => theme.colors.primaryDark};
-  }
 `;
 
-export const LevelUpButton = styled.button`
+export const LevelUpButton = styled.button<StyledLevelUpButtonProps>`
   border: solid 2px white;
   border-radius: 10%;
   padding: 2px;
@@ -37,10 +33,9 @@ export const LevelUpButton = styled.button`
 
   font-size: 10px;
   color: ${({ theme }) => theme.colors.primary};
-
-  &:hover {
-    cursor: pointer;
-  }
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  cursor: pointer;
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
 
   & img {
     height: 50%;

@@ -1,15 +1,22 @@
+import { SkillEmblemProps } from "./constants";
 import * as P from "./parts";
 import coin from "assets/Coin_spin.gif";
 
-const SkillEmblem = () => {
+const SkillEmblem = ({ onClick, level, price, isDisabled = false }: SkillEmblemProps) => {
+  const handleOnClick = () => {
+    if (isDisabled) return;
+
+    onClick();
+  };
+
   return (
     <P.Wrapper>
-      <P.SkillIcon />
-      <p>level 1</p>
-      <P.LevelUpButton>
+      <P.SkillEmblem />
+      <p>level {level}</p>
+      <P.LevelUpButton onClick={handleOnClick} isDisabled={isDisabled}>
         level up
         <p>
-          25
+          {price}
           <img alt="shine" src={coin} />
         </p>
       </P.LevelUpButton>

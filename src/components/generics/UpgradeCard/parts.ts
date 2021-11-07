@@ -1,34 +1,41 @@
 import styled from "styled-components";
+import { StyledLevelUpBtn } from "./constants";
 import heroPortrait from "assets/Temporary_Assets/hero.png";
 
 export const Card = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  position: relative;
+
   width: 80%;
   height: 25%;
-  background-color: ${({ theme }) => theme.colors.secondary};
   border: solid 4px ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
+
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const HeroInfo = styled.p`
   grid-area: 1/1/2/7;
   font-size: 24px;
-`;
 
-export const HorizontalLine = styled.div`
-  grid-area: 2/1/3/7;
-  border-top: solid 1px black;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
 `;
 
 export const HeroPortrait = styled.div`
   grid-area: 3/1/6/3;
+
   background-image: url(${heroPortrait});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+`;
+
+export const LevelUpSection = styled.div`
+  grid-area: 2/4/5/7;
+
+  font-size: 26px;
 `;
 
 export const UpgradesSkillsWrapper = styled.div`
@@ -37,7 +44,7 @@ export const UpgradesSkillsWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const LevelUpButton = styled.button`
+export const LevelUpButton = styled.button<StyledLevelUpBtn>`
   grid-area: 1/6/2/7;
 
   margin: 5px;
@@ -50,10 +57,11 @@ export const LevelUpButton = styled.button`
   color: ${({ theme }) => theme.colors.primary};
 
   transition: 0.3s;
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
-
     background-color: ${({ theme }) => theme.colors.primary};
 
     color: ${({ theme }) => theme.colors.primaryDark};
