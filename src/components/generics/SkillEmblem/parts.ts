@@ -31,7 +31,7 @@ export const LevelUpButton = styled.button<StyledLevelUpButtonProps>`
 
   background-color: ${({ theme }) => theme.colors.primaryDark};
 
-  font-size: 10px;
+  font-size: 0.4rem;
   color: ${({ theme }) => theme.colors.primary};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   cursor: pointer;

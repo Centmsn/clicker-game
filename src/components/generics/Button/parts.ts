@@ -6,6 +6,8 @@ export const Button = styled.button<StyledButtonProps>`
   height: 50px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
+
+  font-size: 0.7rem;
   color: ${({ theme }) => theme.colors.black};
 
   transition: 0.3s;

@@ -1,1 +1,1 @@
-export { default } from "./Treasure";
+export { default } from "./MainClickableItem";
