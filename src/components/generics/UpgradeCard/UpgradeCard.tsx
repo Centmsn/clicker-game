@@ -63,8 +63,8 @@ const UpgradeCard = ({
       <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
         levelUp 🆙
       </P.LevelUpButton>
-      
-      <P.HeroPortrait />
+
+      <P.HeroPortrait portrait={portrait} />
 
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>

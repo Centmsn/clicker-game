@@ -1,8 +1,10 @@
 export interface SkillEmblemProps {
   onClick: () => void;
   isDisabled?: boolean;
+  price: number;
+  level: number;
 }
 
-export interface StyledSkillEmblemProps {
+export interface StyledLevelUpButtonProps {
   isDisabled: boolean;
 }
