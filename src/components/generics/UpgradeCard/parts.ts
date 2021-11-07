@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { StyledLevelUpBtn } from "./constants";
-import heroPortrait from "assets/Temporary_Assets/hero.png";
+import { StyledLevelUpBtn, StyledHeroPortraitProps } from "./constants";
 
 export const Card = styled.div`
   display: grid;
@@ -11,6 +10,7 @@ export const Card = styled.div`
   height: 25%;
   border: solid 4px ${({ theme }) => theme.colors.primary};
   border-radius: 10px;
+  margin-bottom: 20px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
@@ -23,10 +23,12 @@ export const HeroInfo = styled.p`
   margin-bottom: 10px;
 `;
 
-export const HeroPortrait = styled.div`
-  grid-area: 3/1/6/3;
+export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
+  grid-area: 2/1/5/4;
 
-  background-image: url(${heroPortrait});
+  margin-top: 10px;
+
+  background-image: url(${({ portrait }) => portrait});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

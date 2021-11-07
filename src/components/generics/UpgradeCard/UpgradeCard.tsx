@@ -6,7 +6,15 @@ import { increaseUpgradeLevel, increaseIncrement, removeFromWallet, increaseHero
 import { UpgradeCardProps } from "./constants";
 import * as P from "./parts";
 
-const UpgradeCard = ({ name, id, heroLevel, price, incrementPerSecond, upgrades }: UpgradeCardProps): JSX.Element => {
+const UpgradeCard = ({
+  name,
+  id,
+  heroLevel,
+  price,
+  incrementPerSecond,
+  upgrades,
+  portrait,
+}: UpgradeCardProps): JSX.Element => {
   const dispatch = useAppDispatch();
   const walletValue = useAppSelector((state) => state.wallet.value);
 
@@ -49,10 +57,15 @@ const UpgradeCard = ({ name, id, heroLevel, price, incrementPerSecond, upgrades 
       <P.HeroInfo>
         {name} level {heroLevel}
       </P.HeroInfo>
+
+      <P.HeroPortrait portrait={portrait} />
+
       <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
         levelUp 🆙
       </P.LevelUpButton>
+      
       <P.HeroPortrait />
+
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
   );
