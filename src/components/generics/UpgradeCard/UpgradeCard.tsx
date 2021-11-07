@@ -40,7 +40,15 @@ const UpgradeCard = ({
     return upgrades.map((upgrade, tier) => {
       const isDisabled = upgrade.price > walletValue;
 
-      return <SkillEmblem onClick={handleBuyUpgrade(tier, upgrade)} isDisabled={isDisabled} key={tier} />;
+      return (
+        <SkillEmblem
+          onClick={handleBuyUpgrade(tier, upgrade)}
+          isDisabled={isDisabled}
+          price={upgrade.price}
+          level={upgrade.upgradeLevel}
+          key={tier}
+        />
+      );
     });
   };
 
@@ -52,13 +60,11 @@ const UpgradeCard = ({
 
       <P.HeroPortrait portrait={portrait} />
 
-      <P.LevelUpSection>
-        levelUp{" "}
-        <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
-          🆙
-        </P.LevelUpButton>{" "}
-        cost: {price} 🪙
-      </P.LevelUpSection>
+      <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
+        levelUp 🆙
+      </P.LevelUpButton>
+      
+      <P.HeroPortrait />
 
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
