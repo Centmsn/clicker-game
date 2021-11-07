@@ -17,7 +17,7 @@ export const Card = styled.div`
 
 export const HeroInfo = styled.p`
   grid-area: 1/1/2/7;
-  font-size: 24px;
+  font-size: 0.8rem;
 
   border-bottom: 1px solid black;
   margin-bottom: 10px;
@@ -32,12 +32,6 @@ export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-`;
-
-export const LevelUpSection = styled.div`
-  grid-area: 2/4/5/7;
-
-  font-size: 26px;
 `;
 
 export const UpgradesSkillsWrapper = styled.div`
@@ -57,6 +51,7 @@ export const LevelUpButton = styled.button<StyledLevelUpBtn>`
   background-color: ${({ theme }) => theme.colors.primaryDark};
 
   color: ${({ theme }) => theme.colors.primary};
+  font-size: 0.6rem;
 
   transition: 0.3s;
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});

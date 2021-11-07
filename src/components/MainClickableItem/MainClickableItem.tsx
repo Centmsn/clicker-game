@@ -3,7 +3,7 @@ import { useAppDispatch } from "hooks/useAppDispatch";
 import { addToWallet } from "state";
 import * as P from "./parts";
 
-const Unit = () => {
+const MainClickableItem = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -25,4 +25,4 @@ const Unit = () => {
   );
 };
 
-export default Unit;
+export default MainClickableItem;
