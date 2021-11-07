@@ -1,8 +1,10 @@
+import React from "react";
+
 export type ButtonVariant = "primary" | "secondary";
 export interface ButtonProps {
   variant?: ButtonVariant;
+  isDisabled?: boolean;
+  onClick: (e: React.MouseEvent) => void;
 }
 
-export interface StyledButtonProps {
-  variant: ButtonVariant;
-}
+export type StyledButtonProps = Pick<ButtonProps, "variant" | "isDisabled">;

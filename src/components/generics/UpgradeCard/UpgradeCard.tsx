@@ -1,4 +1,5 @@
 import SkillEmblem from "components/generics/SkillEmblem";
+import CardOverlay from "./CardOverlay";
 import { UpgradeBase } from "constants/Upgrades";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
@@ -52,8 +53,15 @@ const UpgradeCard = ({
     });
   };
 
+  const shouldRenderOverlay = heroLevel === 0;
+  const isHeroLevelUpBtnDisabled = price > walletValue;
+
   return (
     <P.Card>
+      {shouldRenderOverlay && (
+        <CardOverlay heroPrice={price} isBuyButtonDisabled={isHeroLevelUpBtnDisabled} buyHero={handleBuyHeroLevel} />
+      )}
+
       <P.HeroInfo>
         {name} level {heroLevel}
       </P.HeroInfo>

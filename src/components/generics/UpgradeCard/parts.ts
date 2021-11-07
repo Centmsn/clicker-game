@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { StyledLevelUpBtn, StyledHeroPortraitProps } from "./constants";
 
 export const Card = styled.div`
+  position: relative;
+
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
