@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledLevelUpBtn, HeroProps } from "./constants";
+import { StyledLevelUpBtn, StyledHeroPortraitProps } from "./constants";
 
 export const LevelUpButton = styled.button<StyledLevelUpBtn>`
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
@@ -35,12 +35,12 @@ export const HeroInfo = styled.p`
   font-size: 32px;
 `;
 
-export const HeroPortrait = styled.div<HeroProps>`
+export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
   grid-area: 2/1/5/4;
 
   margin-top: 10px;
 
-  background-image: url(${(props) => props.portrait});
+  background-image: url(${({ portrait }) => portrait});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
