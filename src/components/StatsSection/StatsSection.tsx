@@ -37,7 +37,9 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
       {stats.map(({ label, value }) => (
         <Stats label={`${label} ${value}`} />
       ))}
-      <Button variant="primary">click me</Button>
+      <Button variant="primary" onClick={() => {}}>
+        click me
+      </Button>
     </P.Wrapper>
   );
 };
