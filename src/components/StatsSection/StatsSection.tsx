@@ -3,20 +3,41 @@ import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
 import { useAppSelector } from "hooks/useAppSelector";
-import { StatsSectionProps } from "./constants";
+import { totalUpgradesSelector, totalHeroLevelSelector } from "state";
+import { StatsSectionProps, StatsObject } from "./constants";
 import * as P from "./parts";
 
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
   const wallet = useAppSelector((state) => state.wallet);
+  const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
+  const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
+
+  const stats: StatsObject = [
+    {
+      label: "Gold:",
+      value: wallet.value,
+    },
+    {
+      label: "Gold per second:",
+      value: wallet.incrementPerSecond,
+    },
+    {
+      label: "Total upgrade level:",
+      value: totalUpgradesLevel,
+    },
+    {
+      label: "Total hero level:",
+      value: totalHeroLevel,
+    },
+  ];
 
   return (
     <P.Wrapper>
       <Title>Statistics</Title>
-      <Stats label={`Gold: ${wallet.value}`} />
-      <Stats label={`Gold per second: ${wallet.incrementPerSecond}`} />
-      <Button onClick={() => {}} variant="primary">
-        click me
-      </Button>
+      {stats.map(({ label, value }) => (
+        <Stats label={`${label} ${value}`} />
+      ))}
+      <Button variant="primary">click me</Button>
     </P.Wrapper>
   );
 };
