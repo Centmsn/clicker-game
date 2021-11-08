@@ -1,7 +1,12 @@
 import * as P from "./parts";
 
-const Toast = () => {
-  return <P.Wrapper>Zapisano zmiany</P.Wrapper>;
+const Toast = ({ isDisplay, onClose }) => {
+  return isDisplay ? (
+    <P.Wrapper>
+      <p>Zapisano zmiany</p>
+      <P.CloseButton onClick={() => onClose(false)}>X</P.CloseButton>
+    </P.Wrapper>
+  ) : null;
 };
 
 export default Toast;
