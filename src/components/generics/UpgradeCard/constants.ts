@@ -1,6 +1,8 @@
 import { HeroBase } from "constants/Heroes";
 
-export interface UpgradeCardProps extends HeroBase {}
+export interface UpgradeCardProps {
+  hero: HeroBase;
+}
 
 export interface StyledHeroPortraitProps {
   portrait: string;
