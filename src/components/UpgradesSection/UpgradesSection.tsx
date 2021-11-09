@@ -1,14 +1,29 @@
 import { Title } from "components/generics/Title/parts";
-import UpgradeCard from "components/generics/UpgradeCard";
+import UpgradeCard, { CardSkeleton } from "components/generics/UpgradeCard";
 import { useAppSelector } from "hooks/useAppSelector";
+import { walletIpsSelector, heroesSelector } from "state";
 import { UpgradesSectionProps } from "./constants";
 import * as P from "./parts";
 
 const UpgradesSection = ({}: UpgradesSectionProps): JSX.Element => {
-  const heroes = useAppSelector((state) => state.heroes);
+  const incrementPerSecond = useAppSelector(walletIpsSelector);
+  const heroes = useAppSelector(heroesSelector);
 
   const renderHeroCards = () => {
-    return heroes.map((hero) => <UpgradeCard {...hero} key={hero.id} />);
+    let isFirstLockedHero = true;
+
+    return heroes.map((hero) => {
+      const isUnlocked = incrementPerSecond >= hero.unlockCondition;
+
+      if (isUnlocked) {
+        return <UpgradeCard {...hero} key={hero.id} />;
+      } else if (isFirstLockedHero) {
+        isFirstLockedHero = false;
+        return <CardSkeleton unlockCondition={hero.unlockCondition} />;
+      }
+
+      return null;
+    });
   };
 
   return (
