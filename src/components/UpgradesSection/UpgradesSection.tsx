@@ -1,3 +1,4 @@
+import RegularList from "components/generics/RegularList";
 import { Title } from "components/generics/Title/parts";
 import UpgradeCard, { CardSkeleton } from "components/generics/UpgradeCard";
 import { useAppSelector } from "hooks/useAppSelector";
@@ -29,7 +30,7 @@ const UpgradesSection = ({}: UpgradesSectionProps): JSX.Element => {
   return (
     <P.Wrapper>
       <Title>Upgrades</Title>
-      {renderHeroCards()}
+      <RegularList itemComponent={UpgradeCard} resourceName="hero" items={heroes} />
     </P.Wrapper>
   );
 };

@@ -13,15 +13,8 @@ import {
 import { UpgradeCardProps } from "./constants";
 import * as P from "./parts";
 
-const UpgradeCard = ({
-  name,
-  id,
-  heroLevel,
-  price,
-  incrementPerSecond,
-  upgrades,
-  portrait,
-}: UpgradeCardProps): JSX.Element => {
+const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
+  const { name, id, heroLevel, price, incrementPerSecond, upgrades, portrait } = hero;
   const dispatch = useAppDispatch();
   const walletValue = useAppSelector(walletValueSelector);
 

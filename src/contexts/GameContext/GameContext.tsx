@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState, useRef } from "react";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
+import { updateTabTitle } from "./utils";
 import { isNumber } from "utils/isNumber";
 import { addToWallet, walletIpsSelector } from "state";
 import { GameContextValue, GameContextProviderProps, TIME_BETWEEN_INTERVAL_TICK } from "./constants";
@@ -9,7 +10,7 @@ const GameContext = createContext({} as GameContextValue);
 
 export const GameContextProvider = ({ children }: GameContextProviderProps) => {
   const [gameIntervalId, setGameIntervalId] = useState<number | null>(null);
-  const incrementPerSecond = useAppSelector(walletIpsSelector);
+  const { incrementPerSecond, value } = useAppSelector((state) => state.wallet);
   const callbackRef = useRef<() => void>();
   const dispatch = useAppDispatch();
 
@@ -39,6 +40,7 @@ export const GameContextProvider = ({ children }: GameContextProviderProps) => {
 
   const handleIntervalTick = () => {
     dispatch(addToWallet(incrementPerSecond));
+    updateTabTitle(value);
   };
 
   return (
