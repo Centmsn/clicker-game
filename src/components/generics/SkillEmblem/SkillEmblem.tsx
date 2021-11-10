@@ -13,13 +13,13 @@ const SkillEmblem = ({ onClick, level, price, isDisabled = false }: SkillEmblemP
     <P.Wrapper>
       <P.SkillEmblem />
       <p>level {level}</p>
-      <P.LevelUpButton onClick={handleOnClick} isDisabled={isDisabled}>
+      {/* <P.LevelUpButton onClick={handleOnClick} isDisabled={isDisabled}>
         level up
         <p>
           {price}
           <img alt="shine" src={coin} />
         </p>
-      </P.LevelUpButton>
+      </P.LevelUpButton> */}
     </P.Wrapper>
   );
 };

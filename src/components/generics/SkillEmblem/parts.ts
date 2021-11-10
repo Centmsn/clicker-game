@@ -4,15 +4,17 @@ import woodenSword from "assets/Temporary_Assets/woodenSword.png";
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  background-color: blue;
+  color: white;
   width: 100%;
-  height: 20%;
-  font-size: 14px;
+  height: 32%;
+  font-size: 8px;
 `;
 
 export const SkillEmblem = styled.div`
-  width: 30%;
+  width: 25%;
   height: 90%;
 
   border: 1px black solid;

@@ -1,7 +1,7 @@
 import Button from "components/generics/Button";
 import { CardOverlayProps } from "./constants";
 import * as P from "./parts";
-import coin from "assets/Coin_spin.gif";
+import coin from "assets/Additional_Assets/coinSpin.gif";
 
 const CardOverlay = ({ heroPrice, isBuyButtonDisabled, buyHero }: CardOverlayProps): JSX.Element => {
   return (

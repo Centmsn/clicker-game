@@ -6,6 +6,8 @@ import { useAppSelector } from "hooks/useAppSelector";
 import { increaseUpgradeLevel, increaseIncrement, removeFromWallet, increaseHeroLevel } from "state";
 import { UpgradeCardProps } from "./constants";
 import * as P from "./parts";
+import arrow from "assets/Additional_Assets/levelUpArrow.png";
+import pixelStar from "assets/Additional_Assets/retroStar.png";
 
 const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
   const { name, id, heroLevel, price, incrementPerSecond, upgrades, portrait } = hero;
@@ -56,13 +58,18 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
       )}
 
       <P.HeroInfo>
-        {name} level {heroLevel}
+        <p>
+          {name} {heroLevel}
+          <sup>level</sup>
+          <img src={pixelStar} alt="pixel star" />
+        </p>
+        <em>increment per second: {incrementPerSecond * heroLevel}/s</em>
       </P.HeroInfo>
 
       <P.HeroPortrait portrait={portrait} />
 
       <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
-        levelUp 🆙
+        levelUp <img src={arrow} alt="levepUp" />
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
