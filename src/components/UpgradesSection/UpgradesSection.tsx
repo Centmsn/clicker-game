@@ -30,7 +30,7 @@ const UpgradesSection = ({}: UpgradesSectionProps): JSX.Element => {
   return (
     <P.Wrapper>
       <Title>Upgrades</Title>
-      <RegularList itemComponent={UpgradeCard} resourceName="hero" items={heroes} />
+      {renderHeroCards()}
     </P.Wrapper>
   );
 };
