@@ -1,17 +1,19 @@
 import styled from "styled-components";
-import { StyledLevelUpBtn, StyledHeroPortraitProps } from "./constants";
+import { StyledLevelUpBtn, StyledHeroPortraitProps, CardProps } from "./constants";
 
-export const Card = styled.div`
+export const Card = styled.div<CardProps>`
   position: relative;
 
-  display: grid;
+  display: ${({ isDisplay }) => (isDisplay ? "grid" : "block")};
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 
   width: 100%;
-  height: 35%;
+  height: ${({ isDisplay }) => (isDisplay ? "35%" : "5%")};
   padding: 10px;
   margin-bottom: 20px;
+  overflow: hidden;
+  transition: 0.2s;
 
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
@@ -20,12 +22,16 @@ export const HeroInfo = styled.p`
   grid-area: 1/1/3/8;
   font-size: 1rem;
 
-  border-bottom: 1px solid black;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
 
-  & em,
-  sup {
+  & sup {
     font-size: 0.4rem;
+  }
+
+  & em {
+    font-size: 0.4rem;
+    border-top: 1px solid black;
+    padding-top: 3px;
   }
 
   & img {
@@ -44,6 +50,16 @@ export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
 export const UpgradesSkillsWrapper = styled.div`
   grid-area: 3/4/13/13;
   overflow: auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.primaryDark};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.primary};
+    border: solid 2px ${({ theme }) => theme.colors.black};
+  }
 `;
 
 export const LevelUpButton = styled.button<StyledLevelUpBtn>`
@@ -82,4 +98,20 @@ export const LevelUpButton = styled.button<StyledLevelUpBtn>`
 
     color: ${({ theme }) => theme.colors.primaryDark};
   }
+`;
+
+export const HideButton = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 40px;
+  height: 20px;
+
+  background-color: ${({ theme }) => theme.colors.black};
+  border-radius: 3px;
+
+  transition: 0.3s;
+
+  cursor: pointer;
 `;

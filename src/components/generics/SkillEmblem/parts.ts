@@ -1,26 +1,35 @@
 import styled from "styled-components";
 import { StyledLevelUpButtonProps } from "./constants";
-import woodenSword from "assets/Temporary_Assets/woodenSword.png";
 
 export const Wrapper = styled.div`
   display: flex;
-  /* justify-content: space-around; */
-  /* align-items: center; */
-  background-color: blue;
-  color: white;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: 32%;
-  font-size: 8px;
+  font-size: 0.4rem;
 `;
 
-export const SkillEmblem = styled.div`
+export const SkillDesc = styled(Wrapper)`
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 0.5rem;
+  padding: 5px;
+`;
+
+export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`
   width: 25%;
   height: 90%;
 
   border: 1px black solid;
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
+  cursor: pointer;
 
   background-color: ${({ theme }) => theme.colors.primary};
-  background-image: url(${woodenSword});
+  background-image: url(${({ image }) => image});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

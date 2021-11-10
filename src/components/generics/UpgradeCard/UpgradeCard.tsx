@@ -8,8 +8,10 @@ import { UpgradeCardProps } from "./constants";
 import * as P from "./parts";
 import arrow from "assets/Additional_Assets/levelUpArrow.png";
 import pixelStar from "assets/Additional_Assets/retroStar.png";
+import { useState } from "react";
 
 const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
+  const [isDisplayCard, setIsDisplayCard] = useState(true);
   const { name, id, heroLevel, price, incrementPerSecond, upgrades, portrait } = hero;
   const dispatch = useAppDispatch();
   const walletValue = useAppSelector((state) => state.wallet.value);
@@ -42,7 +44,10 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
           isDisabled={isDisabled}
           price={upgrade.price}
           level={upgrade.upgradeLevel}
+          name={upgrade.name}
           key={tier}
+          desc={upgrade.desc}
+          image={upgrade.image}
         />
       );
     });
@@ -52,7 +57,7 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
   const isHeroLevelUpBtnDisabled = price > walletValue;
 
   return (
-    <P.Card>
+    <P.Card isDisplay={isDisplayCard}>
       {shouldRenderOverlay && (
         <CardOverlay heroPrice={price} isBuyButtonDisabled={isHeroLevelUpBtnDisabled} buyHero={handleBuyHeroLevel} />
       )}
@@ -73,6 +78,8 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
+
+      <P.HideButton onClick={() => setIsDisplayCard((prev) => !prev)} />
 
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
