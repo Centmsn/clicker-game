@@ -14,7 +14,7 @@ const MainSection = () => {
         <MainClickableItem />
       </P.ButtonWrapper>
 
-      <Tabs tabTitles={["Upgrades", "Options", "Shop"]}>
+      <Tabs tabTitles={["Upgrades", "Achievements", "Shop"]}>
         <p>First tab component</p>
         <p>Second tab component</p>
         <p>Third tab component</p>
