@@ -3,14 +3,20 @@ import CardOverlay from "./CardOverlay";
 import { UpgradeBase } from "constants/Upgrades";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
-import { increaseUpgradeLevel, increaseIncrement, removeFromWallet, increaseHeroLevel } from "state";
+import {
+  increaseUpgradeLevel,
+  increaseIncrement,
+  removeFromWallet,
+  increaseHeroLevel,
+  walletValueSelector,
+} from "state";
 import { UpgradeCardProps } from "./constants";
 import * as P from "./parts";
 
 const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
   const { name, id, heroLevel, price, incrementPerSecond, upgrades, portrait } = hero;
   const dispatch = useAppDispatch();
-  const walletValue = useAppSelector((state) => state.wallet.value);
+  const walletValue = useAppSelector(walletValueSelector);
 
   const handleBuyUpgrade = (tier: number, upgrade: UpgradeBase) => () => {
     const actionPayload = {

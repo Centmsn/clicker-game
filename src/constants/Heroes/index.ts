@@ -14,6 +14,7 @@ export interface HeroBase {
   heroPriceIncrement: number;
   upgrades: Array<U.UpgradeBase>;
   portrait: string;
+  unlockCondition: number;
 }
 
 export const HERO_T_0: HeroBase = {
@@ -25,6 +26,7 @@ export const HERO_T_0: HeroBase = {
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
   portrait: Hero1,
+  unlockCondition: 0,
 };
 
 export const HERO_T_1: HeroBase = {
@@ -36,6 +38,7 @@ export const HERO_T_1: HeroBase = {
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
   portrait: Hero2,
+  unlockCondition: 10,
 };
 
 export const HERO_T_2: HeroBase = {
@@ -47,4 +50,5 @@ export const HERO_T_2: HeroBase = {
   heroPriceIncrement: 1.1,
   upgrades: U.UPGRADES_T_0,
   portrait: Hero3,
+  unlockCondition: 500,
 };

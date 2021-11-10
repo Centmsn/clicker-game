@@ -3,7 +3,7 @@ import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
 import { updateTabTitle } from "./utils";
 import { isNumber } from "utils/isNumber";
-import { addToWallet } from "state";
+import { addToWallet, walletIpsSelector } from "state";
 import { GameContextValue, GameContextProviderProps, TIME_BETWEEN_INTERVAL_TICK } from "./constants";
 
 const GameContext = createContext({} as GameContextValue);
