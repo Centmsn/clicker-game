@@ -1,10 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { calcPrice } from "utils/calcPrice";
+import { initialState } from "./constants";
 import { validateAmount } from "./utils";
-// TODO: refactor import and initial state to be more flexible - should not require to add each hero manually
-import { HERO_T_0, HeroBase, HERO_T_1, HERO_T_2 } from "constants/Heroes";
-
-const initialState: Array<HeroBase> = [HERO_T_0, HERO_T_1, HERO_T_2];
 
 export const upgradesSlice = createSlice({
   name: "Upgrades",
