@@ -1,5 +1,5 @@
 export interface SkillEmblemProps {
-  onClick?: () => void;
+  onClick: () => void;
   isDisabled?: boolean;
   price: number;
   level: number;

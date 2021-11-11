@@ -7,6 +7,7 @@ const theme: DefaultTheme = {
     secondary: "#F5CC84",
     primaryDark: "#756C5B",
     black: "#1a1a1a",
+    dim: "rgba(50, 50, 50, 0.85)",
   },
 };
 

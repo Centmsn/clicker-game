@@ -11,5 +11,5 @@ export const CardOverlay = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(50, 50, 50, 0.85);
+  background-color: ${({ theme }) => theme.colors.dim};
 `;

@@ -5,18 +5,22 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
   width: 100%;
   height: 32%;
+
   font-size: 0.4rem;
 `;
 
 export const SkillDesc = styled(Wrapper)`
-  height: 100%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  line-height: 0.5rem;
+
+  height: 100%;
   padding: 5px;
+
+  line-height: 0.5rem;
 `;
 
 export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`

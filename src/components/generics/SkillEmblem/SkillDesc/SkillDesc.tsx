@@ -1,5 +1,5 @@
-import coin from "assets/Additional_Assets/coinSpin.gif";
 import { SkillDescProps } from "./constants";
+import coin from "assets/Additional_Assets/coinSpin.gif";
 import * as P from "./parts";
 
 const SkillDesc = ({ name, price, level, desc }: SkillDescProps) => {

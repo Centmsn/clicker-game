@@ -1,11 +1,10 @@
-import React from "react";
-import { Title } from "components/generics/Title/parts";
+import Title from "components/generics/Title";
 import * as P from "./parts";
 
 const OptionsSection = () => {
   return (
     <P.Wrapper>
-      <Title>Options</Title>
+      <Title variant="large">Options</Title>
     </P.Wrapper>
   );
 };

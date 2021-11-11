@@ -1,5 +1,5 @@
-import { SkillEmblemProps } from "./constants";
 import SkillDesc from "./SkillDesc";
+import { SkillEmblemProps } from "./constants";
 import * as P from "./parts";
 
 const SkillEmblem = ({ onClick, image, level, desc, name, price, isDisabled = false }: SkillEmblemProps) => {

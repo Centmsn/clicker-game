@@ -4,39 +4,25 @@ import { StyledLevelUpBtn, StyledHeroPortraitProps, CardProps } from "./constant
 export const Card = styled.div<CardProps>`
   position: relative;
 
-  display: ${({ isDisplay }) => (isDisplay ? "grid" : "block")};
+  display: ${({ isExpanded }) => (isExpanded ? "grid" : "block")};
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 
   width: 100%;
-  height: ${({ isDisplay }) => (isDisplay ? "35%" : "5%")};
+  height: ${({ isExpanded }) => (isExpanded ? "35%" : "5%")};
   padding: 10px;
   margin-bottom: 20px;
-  overflow: hidden;
-  transition: 0.2s;
 
   background-color: ${({ theme }) => theme.colors.secondary};
+  overflow: hidden;
+
+  transition: 0.2s;
 `;
 
 export const HeroInfo = styled.p`
   grid-area: 1/1/3/8;
+
   font-size: 1rem;
-
-  /* margin-bottom: 5px; */
-
-  & sup {
-    font-size: 0.4rem;
-  }
-
-  & em {
-    font-size: 0.4rem;
-    border-top: 1px solid black;
-    padding-top: 3px;
-  }
-
-  & img {
-    width: 20px;
-  }
 `;
 
 export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
@@ -49,13 +35,17 @@ export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
 
 export const UpgradesSkillsWrapper = styled.div`
   grid-area: 3/4/13/13;
+
   overflow: auto;
+
   &::-webkit-scrollbar {
     width: 12px;
   }
+
   &::-webkit-scrollbar-track {
     background-color: ${({ theme }) => theme.colors.primaryDark};
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.primary};
     border: solid 2px ${({ theme }) => theme.colors.black};
@@ -84,8 +74,8 @@ export const LevelUpButton = styled.button<StyledLevelUpBtn>`
   font-size: 0.5rem;
 
   transition: 0.3s;
-  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
-  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  filter: grayscale(${(isDisabled) => (isDisabled ? 1 : 0)});
+  pointer-events: ${(isDisabled) => (isDisabled ? "none" : "auto")};
   cursor: pointer;
 
   & img {
@@ -110,8 +100,7 @@ export const HideButton = styled.div`
 
   background-color: ${({ theme }) => theme.colors.black};
   border-radius: 3px;
+  cursor: pointer;
 
   transition: 0.3s;
-
-  cursor: pointer;
 `;

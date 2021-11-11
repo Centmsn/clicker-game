@@ -1,17 +1,22 @@
+import { useState } from "react";
 import SkillEmblem from "components/generics/SkillEmblem";
+import Superscript from "components/generics/Superscript";
+import Subtitle from "components/generics/Subtitle";
+import Picture from "components/generics/Picture";
+import Title from "components/generics/Title";
 import CardOverlay from "./CardOverlay";
 import { UpgradeBase } from "constants/Upgrades";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
 import { increaseUpgradeLevel, increaseIncrement, removeFromWallet, increaseHeroLevel } from "state";
 import { UpgradeCardProps } from "./constants";
-import * as P from "./parts";
 import arrow from "assets/Additional_Assets/levelUpArrow.png";
 import pixelStar from "assets/Additional_Assets/retroStar.png";
-import { useState } from "react";
+import * as P from "./parts";
 
 const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
-  const [isDisplayCard, setIsDisplayCard] = useState(true);
+  const [isCardExpanded, setIsCardExpanded] = useState(true);
+
   const { name, id, heroLevel, price, incrementPerSecond, upgrades, portrait } = hero;
   const dispatch = useAppDispatch();
   const walletValue = useAppSelector((state) => state.wallet.value);
@@ -55,31 +60,32 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
 
   const shouldRenderOverlay = heroLevel === 0;
   const isHeroLevelUpBtnDisabled = price > walletValue;
+  const heroIncrementPerSecond = incrementPerSecond * heroLevel;
 
   return (
-    <P.Card isDisplay={isDisplayCard}>
+    <P.Card isExpanded={isCardExpanded}>
       {shouldRenderOverlay && (
         <CardOverlay heroPrice={price} isBuyButtonDisabled={isHeroLevelUpBtnDisabled} buyHero={handleBuyHeroLevel} />
       )}
 
       <P.HeroInfo>
-        <p>
+        <Title variant="small">
           {name} {heroLevel}
-          <sup>level</sup>
-          <img src={pixelStar} alt="pixel star" />
-        </p>
-        <em>increment per second: {incrementPerSecond * heroLevel}/s</em>
+        </Title>
+        <Superscript>level</Superscript>
+        <Picture src={pixelStar} alt="pixel-star" />
+        <Subtitle value={heroIncrementPerSecond} />
       </P.HeroInfo>
 
       <P.HeroPortrait portrait={portrait} />
 
       <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
-        levelUp <img src={arrow} alt="levepUp" />
+        levelUp <Picture src={arrow} alt="levepUp" />
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
 
-      <P.HideButton onClick={() => setIsDisplayCard((prev) => !prev)} />
+      <P.HideButton onClick={() => setIsCardExpanded((prev) => !prev)} />
 
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>

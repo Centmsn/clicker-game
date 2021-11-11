@@ -4,13 +4,11 @@ import crimsonStaff from "assets/Weapon_Singles/Crimson/Crimson_Weapon27.png";
 import fatefulCrown from "assets/Armor_Singles/Fateful/Fateful_Helmet10.png";
 import goldChestplate from "assets/Armor_Singles/Gold/Gold_Chestplate14.png";
 
-export type UpgradeNames = string;
-
 export interface UpgradeBase {
   incrementPerSecond: number;
   price: number;
   upgradePriceIncrement: number;
-  name: UpgradeNames;
+  name: string;
   upgradeLevel: number;
   requiredHeroLevel: number;
   desc: string;
