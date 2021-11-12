@@ -7,6 +7,10 @@ const theme: DefaultTheme = {
     secondary: "#F5CC84",
     primaryDark: "#756C5B",
     black: "#1a1a1a",
+    white: "#ffffff",
+    green: "#4BB357",
+    yellow: "#F5E131",
+    red: "#FF674F",
   },
 };
 

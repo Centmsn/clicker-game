@@ -5,7 +5,6 @@ import MainSection from "components/MainSection";
 import UpgradesSection from "components/UpgradesSection";
 import GameContext from "contexts/GameContext";
 import * as P from "./parts";
-import Toast from "components/generics/Toast";
 
 const App = () => {
   const gameContext = useContext(GameContext);
@@ -20,7 +19,6 @@ const App = () => {
       <MainSection />
       <OptionsSection />
       <UpgradesSection />
-      <Toast />
     </P.Container>
   );
 };

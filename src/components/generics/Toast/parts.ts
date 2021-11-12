@@ -1,30 +1,52 @@
 import styled from "styled-components";
+import { StyledWrapperProps } from "./constants";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<StyledWrapperProps>`
   position: absolute;
   top: 0;
   left: 0;
 
   display: flex;
 
-  border: solid black 2px;
   width: 300px;
   height: 75px;
+  border: solid black 2px;
 
-  background-color: rgb(255, 90, 80);
+  background-color: ${({ variant }) => {
+    switch (variant) {
+      case "white":
+        return ({ theme }) => theme.colors.white;
+      case "red":
+        return ({ theme }) => theme.colors.red;
+      case "green":
+        return ({ theme }) => theme.colors.green;
+      case "yellow":
+        return ({ theme }) => theme.colors.yellow;
+      default:
+        return;
+    }
+  }};
 
   text-align: center;
   line-height: 75px;
-  color: white;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+
   width: 20px;
   height: 20px;
+  margin: 5px;
 
-  margin-top: 5px;
-
+  color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
+`;
 
-  color: white;
+export const Info = styled.p`
+  margin: 0 auto;
+
+  font-size: 0.8rem;
 `;
