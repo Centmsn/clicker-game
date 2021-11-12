@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import UpgradesReducer from "./UpgradesSlice";
+import UpgradesReducer from "./HeroesSlice";
 import MainWalletReducer from "./MainWalletSlice";
 
 export type RootState = ReturnType<typeof rootReducer>;

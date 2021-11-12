@@ -6,7 +6,7 @@ import { HERO_T_0, HeroBase, HERO_T_1, HERO_T_2 } from "constants/Heroes";
 
 const initialState: Array<HeroBase> = [HERO_T_0, HERO_T_1, HERO_T_2];
 
-export const upgradesSlice = createSlice({
+export const heroesSlice = createSlice({
   name: "Upgrades",
   initialState,
   reducers: {
@@ -51,6 +51,6 @@ export const upgradesSlice = createSlice({
   },
 });
 
-export const { increaseHeroLevel, increaseUpgradeLevel } = upgradesSlice.actions;
+export const { increaseHeroLevel, increaseUpgradeLevel } = heroesSlice.actions;
 
-export default upgradesSlice.reducer;
+export default heroesSlice.reducer;
