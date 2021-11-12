@@ -3,7 +3,7 @@ import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
 import { useAppSelector } from "hooks/useAppSelector";
-import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector } from "state";
+import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector, walletGoldPerClickSelector } from "state";
 import { StatsSectionProps, StatsObject } from "./constants";
 import * as P from "./parts";
 
@@ -11,6 +11,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
   const wallet = useAppSelector(walletSelector);
   const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
   const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
+  const goldPerClick = useAppSelector(walletGoldPerClickSelector);
 
   const stats: StatsObject = [
     {
@@ -28,6 +29,10 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
     {
       label: "Total hero level:",
       value: totalHeroLevel,
+    },
+    {
+      label: "Gold per click:",
+      value: goldPerClick,
     },
   ];
 
