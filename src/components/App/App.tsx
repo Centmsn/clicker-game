@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import StatsSection from "components/StatsSection";
-import OptionsSection from "components/OptionsSection";
+import OptionsSection from "components/BottomSection";
 import MainSection from "components/MainSection";
 import UpgradesSection from "components/UpgradesSection";
 import GameContext from "contexts/GameContext";
