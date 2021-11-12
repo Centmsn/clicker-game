@@ -1,7 +1,7 @@
 import { RootState } from "state";
 
 export const captureStoreState = (state: RootState) => {
-  const test = JSON.stringify(state);
+  const stringifiedAppState = JSON.stringify(state);
 
-  return test;
+  return stringifiedAppState;
 };
