@@ -1,14 +1,25 @@
+import { useState } from "react";
 import { ModalProps } from "./constants";
 import * as P from "./parts";
 
-const Modal = ({ children, toggleModal }: ModalProps) => {
+const Modal = ({ children, isVisible }: ModalProps) => {
+  const [isClose, setIsClose] = useState(isVisible);
+
+  const onClose = () => {
+    setIsClose(false);
+  };
+
   return (
     <>
-      <P.Overlay onClick={() => toggleModal(false)}></P.Overlay>
-      <P.ModalWindow>
-        {children}
-        <P.CloseButton onClick={() => toggleModal(false)}>✖️</P.CloseButton>
-      </P.ModalWindow>
+      {isClose ? (
+        <>
+          <P.Overlay></P.Overlay>
+          <P.ModalWindow>
+            {children}
+            <P.CloseButton onClick={onClose}>✖️</P.CloseButton>
+          </P.ModalWindow>
+        </>
+      ) : null}
     </>
   );
 };
