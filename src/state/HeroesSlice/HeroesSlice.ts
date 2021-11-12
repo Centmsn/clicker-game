@@ -3,7 +3,7 @@ import { calcPrice } from "utils/calcPrice";
 import { initialState } from "./constants";
 import { validateAmount } from "./utils";
 
-export const upgradesSlice = createSlice({
+export const heroesSlice = createSlice({
   name: "Upgrades",
   initialState,
   reducers: {
@@ -48,6 +48,6 @@ export const upgradesSlice = createSlice({
   },
 });
 
-export const { increaseHeroLevel, increaseUpgradeLevel } = upgradesSlice.actions;
+export const { increaseHeroLevel, increaseUpgradeLevel } = heroesSlice.actions;
 
-export default upgradesSlice.reducer;
+export default heroesSlice.reducer;
