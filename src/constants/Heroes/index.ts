@@ -51,27 +51,3 @@ export const HEROES: Array<HeroBase> = [
     unlockCondition: 500,
   },
 ];
-
-// export const HERO_T_1: HeroBase = {
-//   id: "hT1",
-//   incrementPerSecond: 5,
-//   heroLevel: 0,
-//   price: 100,
-//   name: "Eferd",
-//   heroPriceIncrement: 1.1,
-//   upgrades: U.UPGRADES_T_0,
-//   portrait: Hero2,
-//   unlockCondition: 10,
-// };
-
-// export const HERO_T_2: HeroBase = {
-//   id: "hT2",
-//   incrementPerSecond: 20,
-//   heroLevel: 0,
-//   price: 850,
-//   name: "Ingrid",
-//   heroPriceIncrement: 1.1,
-//   upgrades: U.UPGRADES_T_0,
-//   portrait: Hero3,
-//   unlockCondition: 500,
-// };
