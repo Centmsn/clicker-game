@@ -11,5 +11,6 @@ export const CardOverlay = styled.div`
   width: 100%;
   height: 100%;
 
-  background-color: rgba(100, 100, 100, 0.85);
+  //TODO: refactor to fadeOut function
+  background-color: ${({ theme }) => theme.colors.dim};
 `;

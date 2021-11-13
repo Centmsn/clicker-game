@@ -38,7 +38,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
 
   return (
     <P.Wrapper>
-      <Title>Statistics</Title>
+      <Title variant="large">Statistics</Title>
       {stats.map(({ label, value }) => (
         <Stats label={`${label} ${value}`} />
       ))}

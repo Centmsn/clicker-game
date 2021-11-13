@@ -9,3 +9,7 @@ export interface StyledHeroPortraitProps {
 export interface StyledLevelUpBtn {
   isDisabled: boolean;
 }
+
+export interface CardProps {
+  isExpanded: boolean;
+}

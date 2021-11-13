@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppSelector } from "hooks/useAppSelector";
 import Button from "components/generics/Button";
-import { Title } from "components/generics/Title/parts";
+import Title from "components/generics/Title";
 import { saveItemToLS } from "utils/localStorage/saveItem";
 import { LocalStorageKeys } from "utils/localStorage/constants";
 import { captureStoreState } from "utils/captureStoreState";
@@ -15,7 +15,7 @@ const OptionsSection = () => {
 
   return (
     <P.Wrapper>
-      <Title>Options</Title>
+      <Title variant="large">Options</Title>
       <Button onClick={handleSaveGame}>Save</Button>
     </P.Wrapper>
   );
