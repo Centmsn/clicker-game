@@ -1,7 +1,11 @@
+type variants = "white" | "red" | "green" | "yellow";
+
 export interface ToastProps {
-  variant: "white" | "red" | "green" | "yellow";
+  isDisplay: boolean;
+  children: any;
+  variant: variants;
 }
 
 export interface StyledWrapperProps {
-  variant: "white" | "red" | "green" | "yellow";
+  variant: variants;
 }

@@ -12,20 +12,7 @@ export const Wrapper = styled.div<StyledWrapperProps>`
   height: 75px;
   border: solid black 2px;
 
-  background-color: ${({ variant }) => {
-    switch (variant) {
-      case "white":
-        return ({ theme }) => theme.colors.white;
-      case "red":
-        return ({ theme }) => theme.colors.red;
-      case "green":
-        return ({ theme }) => theme.colors.green;
-      case "yellow":
-        return ({ theme }) => theme.colors.yellow;
-      default:
-        return;
-    }
-  }};
+  background-color: ${({ variant, theme }) => theme.colors[variant]};
 
   text-align: center;
   line-height: 75px;

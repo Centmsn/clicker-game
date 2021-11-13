@@ -1,4 +1,4 @@
-import { PropsWithChildren, useRef, useState } from "react";
+import { PropsWithChildren, useState } from "react";
 import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
@@ -8,17 +8,17 @@ import * as P from "./parts";
 
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
   const wallet = useAppSelector((state) => state.wallet);
+  const modalDuration = 5000;
 
-  const [isToastUp, setIsToastUp] = useState(false);
+  const [isToastVisible, setIsToastVisible] = useState(false);
 
   const popupToast = () => {
-    setIsToastUp(true);
-    setTimeout(() => setIsToastUp(false), 5000);
+    setIsToastVisible(true);
+    setTimeout(() => setIsToastVisible(false), modalDuration);
   };
 
   return (
     <P.Wrapper>
-      {/* <Toast refer={toastRef} isDisplay={isToastUp} onClose={setIsToastUp} /> */}
       <Title>Statistics</Title>
       <Stats label={`Gold: ${wallet.value}`} />
       <Stats label={`Gold per second: ${wallet.incrementPerSecond}`} />
