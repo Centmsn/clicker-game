@@ -11,6 +11,7 @@ const theme: DefaultTheme = {
     green: "rgb(75, 179, 87)",
     yellow: "rgb(245, 225, 49)",
     red: "rgb(255, 103, 79)",
+    gray: "rgb(95, 95, 95)",
   },
 };
 

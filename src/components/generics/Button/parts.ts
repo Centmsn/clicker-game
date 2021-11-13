@@ -11,9 +11,11 @@ export const Button = styled.button<StyledButtonProps>`
   color: ${({ theme }) => theme.colors.black};
 
   transition: 0.3s;
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
+  cursor: pointer;
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
-    cursor: pointer;
   }
 `;

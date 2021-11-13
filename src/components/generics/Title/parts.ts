@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { StyledTitleProps } from "./constants";
 
-export const Title = styled.header`
-  margin-bottom: 30px;
-  padding-top: 30px;
+export const Title = styled.header<StyledTitleProps>`
+  display: ${({ variant }) => (variant === "small" ? "inline-block" : "block")};
 
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.black};
-  text-align: center;
+  margin-bottom: ${({ variant }) => (variant === "small" ? null : "30px")};
+  padding-top: ${({ variant }) => (variant === "small" ? null : "30px")};
+
+  font-size: ${({ variant }) => (variant === "small" ? null : "1.5rem")};
+  color: ${({ variant }) => (variant === "small" ? null : ({ theme }) => theme.colors.black)};
+  text-align: ${({ variant }) => (variant === "small" ? null : "center")};
 `;

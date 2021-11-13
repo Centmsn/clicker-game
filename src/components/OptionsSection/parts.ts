@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  grid-area: 11/3/13/11;
+  grid-area: 11/3/13/9;
 
   display: flex;
   justify-content: center;

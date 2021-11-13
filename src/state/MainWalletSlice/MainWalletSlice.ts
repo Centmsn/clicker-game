@@ -18,6 +18,9 @@ export const mainWalletSlice = createSlice({
     increaseIncrement: (state, action: PayloadAction<number>) => {
       state.incrementPerSecond += action.payload;
     },
+    increaseGoldPerClick: (state, action: PayloadAction<number>) => {
+      state.goldPerClick += action.payload;
+    },
     decreaseIncrement: (state, action: PayloadAction<number>) => {
       const newIncrementValue = Math.max(state.incrementPerSecond - action.payload, MIN_INCREMENT);
       state.incrementPerSecond = newIncrementValue;

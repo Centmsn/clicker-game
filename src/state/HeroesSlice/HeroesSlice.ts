@@ -1,12 +1,9 @@
-import { RootState } from "state";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { calcPrice } from "utils/calcPrice";
+import { initialState } from "./constants";
 import { validateAmount } from "./utils";
-import { HERO_T_0, HeroBase, HERO_T_1, HERO_T_2 } from "constants/Heroes";
 
-const initialState: Array<HeroBase> = [HERO_T_0, HERO_T_1, HERO_T_2];
-
-export const upgradesSlice = createSlice({
+export const heroesSlice = createSlice({
   name: "Upgrades",
   initialState,
   reducers: {
@@ -51,10 +48,6 @@ export const upgradesSlice = createSlice({
   },
 });
 
-export const totalUpgradesSelector = (state: RootState) => {
-  // TODO: create logic to calc total amount of upgrades
-};
+export const { increaseHeroLevel, increaseUpgradeLevel } = heroesSlice.actions;
 
-export const { increaseHeroLevel, increaseUpgradeLevel } = upgradesSlice.actions;
-
-export default upgradesSlice.reducer;
+export default heroesSlice.reducer;

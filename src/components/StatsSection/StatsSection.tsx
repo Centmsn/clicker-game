@@ -3,26 +3,54 @@ import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
 import { useAppSelector } from "hooks/useAppSelector";
-import { StatsSectionProps } from "./constants";
+import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector, walletGoldPerClickSelector } from "state";
+import { StatsSectionProps, StatsObject } from "./constants";
 import * as P from "./parts";
 
+const modalDuration = 5000;
+
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
-  const wallet = useAppSelector((state) => state.wallet);
-  const modalDuration = 5000;
-
   const [isToastVisible, setIsToastVisible] = useState(false);
-
+  const wallet = useAppSelector(walletSelector);
+  const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
+  const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
+  const goldPerClick = useAppSelector(walletGoldPerClickSelector);
+    
   const popupToast = () => {
     setIsToastVisible(true);
     setTimeout(() => setIsToastVisible(false), modalDuration);
   };
 
+  const stats: StatsObject = [
+    {
+      label: "Gold:",
+      value: wallet.value,
+    },
+    {
+      label: "Gold per second:",
+      value: wallet.incrementPerSecond,
+    },
+    {
+      label: "Total upgrade level:",
+      value: totalUpgradesLevel,
+    },
+    {
+      label: "Total hero level:",
+      value: totalHeroLevel,
+    },
+    {
+      label: "Gold per click:",
+      value: goldPerClick,
+    },
+  ];
+
   return (
     <P.Wrapper>
-      <Title>Statistics</Title>
-      <Stats label={`Gold: ${wallet.value}`} />
-      <Stats label={`Gold per second: ${wallet.incrementPerSecond}`} />
-      <Button onClick={() => popupToast()} variant="primary">
+      <Title variant="large">Statistics</Title>
+      {stats.map(({ label, value }) => (
+        <Stats label={`${label} ${value}`} />
+      ))}
+      <Button variant="primary" onClick={() => {}}>
         click me
       </Button>
     </P.Wrapper>
