@@ -1,7 +1,5 @@
 import { useState } from "react";
 import SkillEmblem from "components/generics/SkillEmblem";
-import Superscript from "components/generics/Superscript";
-import Subtitle from "components/generics/Subtitle";
 import Picture from "components/generics/Picture";
 import Title from "components/generics/Title";
 import CardOverlay from "./CardOverlay";
@@ -72,9 +70,9 @@ const UpgradeCard = ({ hero }: UpgradeCardProps): JSX.Element => {
         <Title variant="small">
           {name} {heroLevel}
         </Title>
-        <Superscript>level</Superscript>
+        <P.Sup>level</P.Sup>
         <Picture src={pixelStar} alt="pixel-star" />
-        <Subtitle value={heroIncrementPerSecond} />
+        <P.SubTitle> increments {heroIncrementPerSecond} gold /s </P.SubTitle>
       </P.HeroInfo>
 
       <P.HeroPortrait portrait={portrait} />

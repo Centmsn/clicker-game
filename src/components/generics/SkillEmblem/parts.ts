@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 32%;
 
-  font-size: 0.4rem;
+  font-size: 7px;
 `;
 
 export const SkillDesc = styled(Wrapper)`

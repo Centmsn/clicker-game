@@ -5,5 +5,5 @@ export const Wrapper = styled.div`
 `;
 
 export const Coin = styled.img`
-  height: 0.4rem;
+  height: 8px;
 `;

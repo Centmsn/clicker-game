@@ -104,3 +104,15 @@ export const HideButton = styled.div`
 
   transition: 0.3s;
 `;
+
+export const SubTitle = styled.p`
+  border-top: 1px solid black;
+  padding-top: 3px;
+
+  font-size: 0.4rem;
+  font-style: italic;
+`;
+
+export const Sup = styled.sup`
+  font-size: 0.4rem;
+`;
