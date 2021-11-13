@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
     primaryDark: "#756C5B",
     black: "#1a1a1a",
     dim: "rgba(50, 50, 50, 0.85)",
+    gray: "rgb(95, 95, 95)",
   },
 };
 

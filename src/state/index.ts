@@ -1,4 +1,4 @@
 export * from "./store";
 export * from "./rootReducer";
-export * from "./UpgradesSlice";
+export * from "./HeroesSlice";
 export * from "./MainWalletSlice";

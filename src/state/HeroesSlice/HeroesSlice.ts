@@ -1,13 +1,9 @@
-import { RootState } from "state";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { calcPrice } from "utils/calcPrice";
+import { initialState } from "./constants";
 import { validateAmount } from "./utils";
-import { sumArray } from "utils/sumArray";
-import { HERO_T_0, HeroBase, HERO_T_1, HERO_T_2 } from "constants/Heroes";
 
-const initialState: Array<HeroBase> = [HERO_T_0, HERO_T_1, HERO_T_2];
-
-export const upgradesSlice = createSlice({
+export const heroesSlice = createSlice({
   name: "Upgrades",
   initialState,
   reducers: {
@@ -52,11 +48,6 @@ export const upgradesSlice = createSlice({
   },
 });
 
-export const totalUpgradesSelector = (state: RootState) =>
-  sumArray(state.heroes.map((hero) => hero.upgrades.reduce((acc, current) => acc + current.upgradeLevel, 0)));
+export const { increaseHeroLevel, increaseUpgradeLevel } = heroesSlice.actions;
 
-export const totalHeroLevelSelector = (state: RootState) => sumArray(state.heroes.map((hero) => hero.heroLevel));
-
-export const { increaseHeroLevel, increaseUpgradeLevel } = upgradesSlice.actions;
-
-export default upgradesSlice.reducer;
+export default heroesSlice.reducer;

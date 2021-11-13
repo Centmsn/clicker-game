@@ -14,37 +14,40 @@ export interface HeroBase {
   heroPriceIncrement: number;
   upgrades: Array<U.UpgradeBase>;
   portrait: string;
+  unlockCondition: number;
 }
-
-export const HERO_T_0: HeroBase = {
-  id: "hT0",
-  incrementPerSecond: 1,
-  heroLevel: 0,
-  price: 25,
-  name: "Akio",
-  heroPriceIncrement: 1.1,
-  upgrades: U.UPGRADES_T_0,
-  portrait: Hero1,
-};
-
-export const HERO_T_1: HeroBase = {
-  id: "hT1",
-  incrementPerSecond: 5,
-  heroLevel: 0,
-  price: 100,
-  name: "Eferd",
-  heroPriceIncrement: 1.1,
-  upgrades: U.UPGRADES_T_0,
-  portrait: Hero2,
-};
-
-export const HERO_T_2: HeroBase = {
-  id: "hT2",
-  incrementPerSecond: 20,
-  heroLevel: 0,
-  price: 850,
-  name: "Ingrid",
-  heroPriceIncrement: 1.1,
-  upgrades: U.UPGRADES_T_0,
-  portrait: Hero3,
-};
+export const HEROES: Array<HeroBase> = [
+  {
+    id: "hT0",
+    incrementPerSecond: 1,
+    heroLevel: 0,
+    price: 25,
+    name: "Akio",
+    heroPriceIncrement: 1.1,
+    upgrades: U.UPGRADES_T_0,
+    portrait: Hero1,
+    unlockCondition: 0,
+  },
+  {
+    id: "hT1",
+    incrementPerSecond: 5,
+    heroLevel: 0,
+    price: 100,
+    name: "Eferd",
+    heroPriceIncrement: 1.1,
+    upgrades: U.UPGRADES_T_0,
+    portrait: Hero2,
+    unlockCondition: 10,
+  },
+  {
+    id: "hT2",
+    incrementPerSecond: 20,
+    heroLevel: 0,
+    price: 850,
+    name: "Ingrid",
+    heroPriceIncrement: 1.1,
+    upgrades: U.UPGRADES_T_0,
+    portrait: Hero3,
+    unlockCondition: 500,
+  },
+];
