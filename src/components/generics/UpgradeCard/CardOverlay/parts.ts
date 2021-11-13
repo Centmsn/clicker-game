@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeOut } from "style/utils";
 
 export const CardOverlay = styled.div`
   position: absolute;
@@ -11,6 +12,5 @@ export const CardOverlay = styled.div`
   width: 100%;
   height: 100%;
 
-  //TODO: refactor to fadeOut function
-  background-color: ${({ theme }) => theme.colors.dim};
+  background-color: ${({ theme }) => fadeOut(theme.colors.black, 0.75)};
 `;

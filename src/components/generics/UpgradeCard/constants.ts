@@ -11,5 +11,5 @@ export interface StyledLevelUpBtn {
 }
 
 export interface CardProps {
-  isExpanded: boolean;
+  isExpanded?: boolean;
 }
