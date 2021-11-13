@@ -1,18 +1,48 @@
 import { PropsWithChildren } from "react";
-import { StatsSectionProps } from "./constants";
 import Title from "components/generics/Title";
-import * as P from "./parts";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
+import { useAppSelector } from "hooks/useAppSelector";
+import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector, walletGoldPerClickSelector } from "state";
+import { StatsSectionProps, StatsObject } from "./constants";
+import * as P from "./parts";
 
-const StatsSection = (): JSX.Element => {
+const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
+  const wallet = useAppSelector(walletSelector);
+  const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
+  const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
+  const goldPerClick = useAppSelector(walletGoldPerClickSelector);
+
+  const stats: StatsObject = [
+    {
+      label: "Gold:",
+      value: wallet.value,
+    },
+    {
+      label: "Gold per second:",
+      value: wallet.incrementPerSecond,
+    },
+    {
+      label: "Total upgrade level:",
+      value: totalUpgradesLevel,
+    },
+    {
+      label: "Total hero level:",
+      value: totalHeroLevel,
+    },
+    {
+      label: "Gold per click:",
+      value: goldPerClick,
+    },
+  ];
+
   return (
     <P.Wrapper>
       <Title>Statistics</Title>
-      <Stats label="dmg per second" />
-      <Stats label="money per second" />
-      <Stats label="overal kills" />
-      <Button onClick={() => {}} variant="variantOne">
+      {stats.map(({ label, value }) => (
+        <Stats label={`${label} ${value}`} />
+      ))}
+      <Button variant="primary" onClick={() => {}}>
         click me
       </Button>
     </P.Wrapper>

@@ -1,8 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import ExampleSlice from "./ExampleSlice";
+import UpgradesReducer from "./HeroesSlice";
+import MainWalletReducer from "./MainWalletSlice";
 
 export type RootState = ReturnType<typeof rootReducer>;
 
 export const rootReducer = combineReducers({
-  example: ExampleSlice,
+  heroes: UpgradesReducer,
+  wallet: MainWalletReducer,
 });
