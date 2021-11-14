@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
@@ -7,11 +7,19 @@ import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector, walletGo
 import { StatsSectionProps, StatsObject } from "./constants";
 import * as P from "./parts";
 
+const modalDuration = 5000;
+
 const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.Element => {
+  const [isToastVisible, setIsToastVisible] = useState(false);
   const wallet = useAppSelector(walletSelector);
   const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
   const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
   const goldPerClick = useAppSelector(walletGoldPerClickSelector);
+    
+  const popupToast = () => {
+    setIsToastVisible(true);
+    setTimeout(() => setIsToastVisible(false), modalDuration);
+  };
 
   const stats: StatsObject = [
     {
