@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import StatsSection from "components/StatsSection";
+import StatsSection from "components/LeftSection";
 import OptionsSection from "components/BottomSection";
 import MainSection from "components/MainSection";
-import UpgradesSection from "components/UpgradesSection";
+import UpgradesSection from "components/RightSection";
 import GameContext from "contexts/GameContext";
 import * as P from "./parts";
 
