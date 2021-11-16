@@ -7,3 +7,7 @@ export const fadeOut = (rgb: string, opacity: number) => {
 
   return rgb;
 };
+
+export const shouldDisablePointerEvents = (isDisabled: boolean) => {
+  return isDisabled ? "none" : "auto";
+};
