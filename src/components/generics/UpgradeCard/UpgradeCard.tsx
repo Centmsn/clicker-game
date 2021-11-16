@@ -1,4 +1,7 @@
+import { useState } from "react";
 import SkillEmblem from "components/generics/SkillEmblem";
+import Picture from "components/generics/Picture";
+import Title from "components/generics/Title";
 import CardOverlay from "./CardOverlay";
 import { UpgradeBase } from "constants/Upgrades";
 import { useAppDispatch } from "hooks/useAppDispatch";
@@ -11,6 +14,8 @@ import {
   walletValueSelector,
 } from "state";
 import { UpgradeCardProps } from "./constants";
+import arrow from "assets/Additional_Assets/levelUpArrow.png";
+import pixelStar from "assets/Additional_Assets/retroStar.png";
 import * as P from "./parts";
 
 const UpgradeCard = ({
@@ -22,6 +27,7 @@ const UpgradeCard = ({
   upgrades,
   portrait,
 }: UpgradeCardProps): JSX.Element => {
+  const [isCardExpanded, setIsCardExpanded] = useState(true);
   const dispatch = useAppDispatch();
   const walletValue = useAppSelector(walletValueSelector);
 
@@ -53,7 +59,10 @@ const UpgradeCard = ({
           isDisabled={isDisabled}
           price={upgrade.price}
           level={upgrade.upgradeLevel}
+          name={upgrade.name}
           key={tier}
+          desc={upgrade.desc}
+          image={upgrade.image}
         />
       );
     });
@@ -61,24 +70,32 @@ const UpgradeCard = ({
 
   const shouldRenderOverlay = heroLevel === 0;
   const isHeroLevelUpBtnDisabled = price > walletValue;
+  const heroIncrementPerSecond = incrementPerSecond * heroLevel;
 
   return (
-    <P.Card>
+    <P.Card isExpanded={isCardExpanded}>
       {shouldRenderOverlay && (
         <CardOverlay heroPrice={price} isBuyButtonDisabled={isHeroLevelUpBtnDisabled} buyHero={handleBuyHeroLevel} />
       )}
 
       <P.HeroInfo>
-        {name} level {heroLevel}
+        <Title variant="small">
+          {name} {heroLevel}
+        </Title>
+        <P.Sup>level</P.Sup>
+        <Picture src={pixelStar} alt="pixel-star" />
+        <P.SubTitle> increments {heroIncrementPerSecond} gold /s </P.SubTitle>
       </P.HeroInfo>
 
       <P.HeroPortrait portrait={portrait} />
 
       <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
-        levelUp 🆙
+        levelUp <Picture src={arrow} alt="levepUp" />
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
+
+      <P.HideButton onClick={() => setIsCardExpanded((prev) => !prev)} />
 
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>

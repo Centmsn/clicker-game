@@ -8,7 +8,7 @@ const MainSection = () => {
   return (
     <P.Wrapper>
       <P.TitleWrapper>
-        <Title>Dungeon Clicker</Title>
+        <Title variant="large">Dungeon Clicker</Title>
       </P.TitleWrapper>
 
       <P.ButtonWrapper>

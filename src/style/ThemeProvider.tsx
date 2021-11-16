@@ -7,6 +7,10 @@ const theme: DefaultTheme = {
     secondary: "rgb(245, 204, 132)",
     primaryDark: "rgb(117, 108, 91)",
     black: "rgb(26, 26, 26)",
+    white: "rgb(255, 255, 255)",
+    green: "rgb(75, 179, 87)",
+    yellow: "rgb(245, 225, 49)",
+    red: "rgb(255, 103, 79)",
     gray: "rgb(95, 95, 95)",
   },
 };

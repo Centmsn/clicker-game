@@ -28,7 +28,7 @@ const UpgradesSection = ({}: UpgradesSectionProps): JSX.Element => {
 
   return (
     <P.Wrapper>
-      <Title>Heroes</Title>
+      <Title variant="large">Upgrades</Title>
       {renderHeroCards()}
     </P.Wrapper>
   );
