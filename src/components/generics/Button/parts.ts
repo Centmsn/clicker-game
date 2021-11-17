@@ -1,29 +1,15 @@
-import styled, { css } from "styled-components";
-import { StyledButtonProps } from "./constants";
-
-const jakisVariant = css`
-  font-size: 12px;
-  color: red;
-`;
+import styled from "styled-components";
+import { StyledButtonProps, Variants } from "./constants";
 
 const getBtnVariant = (variant: string | undefined) => {
   switch (variant) {
     case "primary":
-      return jakisVariant;
+      return Variants.primary;
+    case "secondary":
+      return Variants.secondary;
     default:
       return;
   }
-};
-
-const Variants = {
-  primary: {
-    backgroundColor: "red",
-    fontSize: "12px",
-  },
-  secondary: {
-    backgroundColor: "blue",
-    fontSize: "22px",
-  },
 };
 
 export const Button = styled.button<StyledButtonProps>`
@@ -40,6 +26,7 @@ export const Button = styled.button<StyledButtonProps>`
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme, variant }) =>
+      variant === "primary" ? theme.colors.secondary : theme.colors.primary};
   }
 `;

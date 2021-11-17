@@ -15,7 +15,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
   const totalUpgradesLevel = useAppSelector(totalUpgradesSelector);
   const totalHeroLevel = useAppSelector(totalHeroLevelSelector);
   const goldPerClick = useAppSelector(walletGoldPerClickSelector);
-    
+
   const popupToast = () => {
     setIsToastVisible(true);
     setTimeout(() => setIsToastVisible(false), modalDuration);

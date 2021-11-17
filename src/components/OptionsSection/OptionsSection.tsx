@@ -16,7 +16,9 @@ const OptionsSection = () => {
   return (
     <P.Wrapper>
       <Title variant="large">Options</Title>
-      <Button onClick={handleSaveGame}>Save</Button>
+      <Button variant="secondary" onClick={handleSaveGame}>
+        Save
+      </Button>
     </P.Wrapper>
   );
 };
