@@ -27,6 +27,6 @@ export const Button = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: ${({ theme, variant }) =>
-      variant === "primary" ? theme.colors.secondary : theme.colors.primary};
+      variant === "PRIMARY" ? theme.colors.secondary : theme.colors.primary};
   }
 `;

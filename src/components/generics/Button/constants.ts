@@ -1,9 +1,13 @@
 import React from "react";
 import { css } from "styled-components";
 
-export type ButtonVariant = "primary" | "secondary";
+export enum ButtonVariants {
+  primary = "PRIMARY",
+  secondary = "SECONDARY",
+}
+
 export interface ButtonProps {
-  variant?: ButtonVariant;
+  variant?: ButtonVariants;
   isDisabled?: boolean;
   onClick: (e: React.MouseEvent) => void;
 }
