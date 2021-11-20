@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Title } from "components/generics/Title/parts";
 import UpgradeCard, { CardSkeleton } from "components/generics/UpgradeCard";
 import AmountButtons from "./AmountButtons";

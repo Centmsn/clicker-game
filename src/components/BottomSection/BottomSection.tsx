@@ -1,17 +1,17 @@
 import React from "react";
 import { useAppSelector } from "hooks/useAppSelector";
-import { walletSelector } from "state";
+import { walletMainStatsSelector } from "state";
 import * as P from "./parts";
 
 const OptionsSection = () => {
-  const mainWallet = useAppSelector(walletSelector);
+  const mainWalletMainStats = useAppSelector(walletMainStatsSelector);
 
   return (
     <P.Wrapper>
-      {Object.entries(mainWallet).map(([key, value], index) => (
+      {mainWalletMainStats.map((stat) => (
         <P.Card>
-          <P.CardHeader>{key}</P.CardHeader>
-          <P.CardBody>{value}</P.CardBody>
+          <P.CardHeader>{stat.label}</P.CardHeader>
+          <P.CardBody>{stat.value}</P.CardBody>
         </P.Card>
       ))}
     </P.Wrapper>
