@@ -3,6 +3,7 @@ import { useAppSelector } from "hooks/useAppSelector";
 import Button from "components/generics/Button";
 import Title from "components/generics/Title";
 import { saveItemToLS } from "utils/localStorage/saveItem";
+import { ButtonVariants } from "components/generics/Button/constants";
 import { LocalStorageKeys } from "utils/localStorage/constants";
 import { captureStoreState } from "utils/captureStoreState";
 import * as P from "./parts";
@@ -16,7 +17,7 @@ const OptionsSection = () => {
   return (
     <P.Wrapper>
       <Title variant="large">Options</Title>
-      <Button variant="secondary" onClick={handleSaveGame}>
+      <Button variant={ButtonVariants.secondary} onClick={handleSaveGame}>
         Save
       </Button>
     </P.Wrapper>

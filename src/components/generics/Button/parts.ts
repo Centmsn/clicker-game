@@ -3,9 +3,9 @@ import { StyledButtonProps, Variants } from "./constants";
 
 const getBtnVariant = (variant: string | undefined) => {
   switch (variant) {
-    case "primary":
+    case "PRIMARY":
       return Variants.primary;
-    case "secondary":
+    case "SECONDARY":
       return Variants.secondary;
     default:
       return;

@@ -2,6 +2,7 @@ import { PropsWithChildren, useState } from "react";
 import Title from "components/generics/Title";
 import Stats from "components/generics/Stats";
 import Button from "components/generics/Button";
+import { ButtonVariants } from "components/generics/Button/constants";
 import { useAppSelector } from "hooks/useAppSelector";
 import { totalUpgradesSelector, totalHeroLevelSelector, walletSelector, walletGoldPerClickSelector } from "state";
 import { StatsSectionProps, StatsObject } from "./constants";
@@ -50,7 +51,7 @@ const StatsSection = ({ children }: PropsWithChildren<StatsSectionProps>): JSX.E
       {stats.map(({ label, value }) => (
         <Stats label={`${label} ${value}`} />
       ))}
-      <Button variant="primary" onClick={() => {}}>
+      <Button variant={ButtonVariants.primary} onClick={() => {}}>
         click me
       </Button>
     </P.Wrapper>
