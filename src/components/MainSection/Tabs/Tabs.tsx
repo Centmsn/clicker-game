@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useState } from "react";
-import { Button } from "components/generics/Button/parts";
-import { ButtonVariants } from "components/generics/Button/constants";
+import { ButtonSizes, ButtonVariants } from "components/generics/Button/constants";
 import { TabsProps } from "./constants";
+import { Button } from "components/generics/Button/parts";
 import * as P from "./parts";
 
 const Tabs = ({ children, tabTitles }: PropsWithChildren<TabsProps>): JSX.Element => {
@@ -24,7 +24,7 @@ const Tabs = ({ children, tabTitles }: PropsWithChildren<TabsProps>): JSX.Elemen
             <P.TabHeader index={index} onClick={handleTabVisibility(index)} width={tabWidth} isVisible={isTabVisible}>
               {tabTitle}
               {isTabVisible && (
-                <Button variant={ButtonVariants.primary} onClick={handleTabVisibility(index)}>
+                <Button size={ButtonSizes.LARGE} variant={ButtonVariants.PRIMARY} onClick={handleTabVisibility(index)}>
                   Close X
                 </Button>
               )}

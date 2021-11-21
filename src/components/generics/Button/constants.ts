@@ -2,17 +2,28 @@ import React from "react";
 import { css } from "styled-components";
 
 export enum ButtonVariants {
-  primary = "PRIMARY",
-  secondary = "SECONDARY",
+  PRIMARY = "PRIMARY",
+  SECONDARY = "SECONDARY",
+}
+
+export enum ButtonSizes {
+  SMALL = "SMALL",
+  LARGE = "LARGE",
 }
 
 export interface ButtonProps {
   variant?: ButtonVariants;
   isDisabled?: boolean;
+  size: ButtonSizes;
   onClick: (e: React.MouseEvent) => void;
 }
 
-export type StyledButtonProps = Pick<ButtonProps, "variant" | "isDisabled">;
+export type StyledButtonProps = Pick<ButtonProps, "variant" | "isDisabled" | "size">;
+
+export const Sizes = {
+  small: "80px",
+  large: "200px",
+};
 
 export const Variants = {
   primary: css`

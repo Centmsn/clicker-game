@@ -1,9 +1,9 @@
-import * as P from "./parts";
-import { ButtonProps } from "components/generics/Button/constants";
 import React, { PropsWithChildren } from "react";
+import { ButtonProps } from "components/generics/Button/constants";
+import * as P from "./parts";
 
 // TODO: variant should change button style - define button styles
-const Button = ({ children, onClick, isDisabled = false, variant }: PropsWithChildren<ButtonProps>) => {
+const Button = ({ children, onClick, isDisabled = false, variant, size }: PropsWithChildren<ButtonProps>) => {
   const handleOnClick = (event: React.MouseEvent) => {
     if (isDisabled) return;
 
@@ -11,7 +11,7 @@ const Button = ({ children, onClick, isDisabled = false, variant }: PropsWithChi
   };
 
   return (
-    <P.Button onClick={handleOnClick} variant={variant} isDisabled={isDisabled}>
+    <P.Button size={size} onClick={handleOnClick} variant={variant} isDisabled={isDisabled}>
       {children}
     </P.Button>
   );

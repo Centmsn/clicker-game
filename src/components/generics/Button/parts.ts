@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledButtonProps, Variants } from "./constants";
+import { ButtonVariants, Sizes, StyledButtonProps, Variants } from "./constants";
 
 const getBtnVariant = (variant: string | undefined) => {
   switch (variant) {
@@ -12,8 +12,19 @@ const getBtnVariant = (variant: string | undefined) => {
   }
 };
 
+const getBtnSize = (size: string | undefined) => {
+  switch (size) {
+    case "SMALL":
+      return Sizes.small;
+    case "LARGE":
+      return Sizes.large;
+    default:
+      return;
+  }
+};
+
 export const Button = styled.button<StyledButtonProps>`
-  width: 200px;
+  width: ${({ size }) => getBtnSize(size)};
   height: 50px;
 
   font-size: 0.7rem;
@@ -27,6 +38,6 @@ export const Button = styled.button<StyledButtonProps>`
 
   &:hover {
     background-color: ${({ theme, variant }) =>
-      variant === "PRIMARY" ? theme.colors.secondary : theme.colors.primary};
+      variant === ButtonVariants.PRIMARY ? theme.colors.secondary : theme.colors.primary};
   }
 `;

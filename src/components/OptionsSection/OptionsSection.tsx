@@ -2,8 +2,8 @@ import React from "react";
 import { useAppSelector } from "hooks/useAppSelector";
 import Button from "components/generics/Button";
 import Title from "components/generics/Title";
+import { ButtonSizes, ButtonVariants } from "components/generics/Button/constants";
 import { saveItemToLS } from "utils/localStorage/saveItem";
-import { ButtonVariants } from "components/generics/Button/constants";
 import { LocalStorageKeys } from "utils/localStorage/constants";
 import { captureStoreState } from "utils/captureStoreState";
 import * as P from "./parts";
@@ -17,7 +17,7 @@ const OptionsSection = () => {
   return (
     <P.Wrapper>
       <Title variant="large">Options</Title>
-      <Button variant={ButtonVariants.secondary} onClick={handleSaveGame}>
+      <Button size={ButtonSizes.SMALL} variant={ButtonVariants.SECONDARY} onClick={handleSaveGame}>
         Save
       </Button>
     </P.Wrapper>
