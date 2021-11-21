@@ -22,11 +22,7 @@ const Tabs = ({ children, tabTitles }: PropsWithChildren<TabsProps>): JSX.Elemen
           <P.Tab isVisible={isTabVisible}>
             <P.TabHeader index={index} onClick={handleTabVisibility(index)} width={tabWidth} isVisible={isTabVisible}>
               {tabTitle}
-              {isTabVisible && (
-                <Button variant="secondary" onClick={handleTabVisibility(index)}>
-                  Close X
-                </Button>
-              )}
+              {isTabVisible && <Button onClick={handleTabVisibility(index)}>Close X</Button>}
             </P.TabHeader>
             <P.TabBody>{item}</P.TabBody>
           </P.Tab>
