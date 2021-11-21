@@ -33,7 +33,7 @@ export const calcPriceAndAmount = (
   const hasEnoughGoldForNextUpgrade = walletValue - newAccumulatedPrice >= 0;
 
   if (!hasEnoughGoldForNextUpgrade) {
-    const roundedPrice = Math.round(accumulatedPrice) || price;
+    const roundedPrice = Math.round(accumulatedPrice || nextLevelPrice);
     const maxAmount = amount || 1;
 
     return {

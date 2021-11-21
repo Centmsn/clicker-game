@@ -48,6 +48,10 @@ const UpgradeCard = ({
     dispatch(increaseIncrement(incrementPerSecond));
   };
 
+  const handleCardExpand = () => {
+    setIsCardExpanded((prev) => !prev);
+  };
+
   const renderSkillEmblems = useCallback(() => {
     return upgrades.map((upgrade, tier) => {
       const { availableUpgradesAmount, finalUpgradePrice } = calcUpgradePrice(
@@ -61,8 +65,6 @@ const UpgradeCard = ({
         ...upgrade,
         price: finalUpgradePrice,
       };
-
-      console.log(availableUpgradesAmount);
 
       return (
         <SkillEmblem
@@ -101,7 +103,7 @@ const UpgradeCard = ({
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
-      <P.HideButton onClick={() => setIsCardExpanded((prev) => !prev)} />
+      <P.HideButton onClick={handleCardExpand} />
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
   );

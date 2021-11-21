@@ -5,7 +5,7 @@ import { isEmpty } from "utils/isEmpty";
 
 export const INITIAL_WALLET_VALUE = 0;
 export const INITIAL_INCREMENT = 0;
-export const INITIAL_GOLD_PER_CLICK = 1;
+export const INITIAL_GOLD_PER_CLICK = 1000;
 export const MIN_WALLET_VALUE = 0;
 export const MIN_INCREMENT = 0;
 export const INITIAL_UPGRADES_PER_CLICK = 1;
