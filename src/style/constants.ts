@@ -14,6 +14,11 @@ declare module "styled-components" {
       red: string;
       gray: string;
     };
+    styles: {
+      pad_small: string;
+      width_medium: string;
+      height_short: string;
+    };
   }
 }
 

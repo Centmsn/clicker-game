@@ -13,6 +13,11 @@ const theme: DefaultTheme = {
     red: "rgb(255, 103, 79)",
     gray: "rgb(95, 95, 95)",
   },
+  styles: {
+    pad_small: "10px",
+    width_medium: "200px",
+    height_short: "50px",
+  },
 };
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {

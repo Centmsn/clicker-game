@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { StyledButtonProps } from "./constants";
 
 export const Button = styled.button<StyledButtonProps>`
-  width: 200px;
-  height: 50px;
+  width: ${({ theme }) => theme.styles.width_medium};
+  height: ${({ theme }) => theme.styles.height_short};
 
   background-color: ${({ theme }) => theme.colors.secondary};
 
