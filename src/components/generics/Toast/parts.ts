@@ -8,9 +8,9 @@ export const Wrapper = styled.div<StyledWrapperProps>`
 
   display: flex;
 
-  width: 300px;
-  height: 75px;
-  border: solid black 2px;
+  width: ${({ theme }) => theme.styles.width_medium};
+  height: ${({ theme }) => theme.styles.height_medium};
+  border: ${({ theme }) => theme.styles.border_solid_tight};
 
   background-color: ${({ variant, theme }) => theme.colors[variant]};
 

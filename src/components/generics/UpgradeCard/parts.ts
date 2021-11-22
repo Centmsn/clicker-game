@@ -48,7 +48,7 @@ export const UpgradesSkillsWrapper = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.primary};
-    border: solid 2px ${({ theme }) => theme.colors.black};
+    border: ${({ theme }) => theme.styles.border_solid_tight};
   }
 `;
 
@@ -106,7 +106,7 @@ export const HideButton = styled.div`
 `;
 
 export const SubTitle = styled.p`
-  border-top: 1px solid black;
+  border-top: ${({ theme }) => theme.styles.border_solid_tight};
   padding-top: 3px;
 
   font-size: 0.4rem;

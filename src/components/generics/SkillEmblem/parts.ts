@@ -27,7 +27,7 @@ export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`
   width: 25%;
   height: 90%;
 
-  border: 1px black solid;
+  border: ${({ theme }) => theme.styles.border_solid_tight};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
   cursor: pointer;
@@ -42,7 +42,7 @@ export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`
 export const LevelUpButton = styled.button<StyledLevelUpButtonProps>`
   border: solid 2px white;
   border-radius: 10%;
-  padding: 2px;
+  padding: ${({ theme }) => theme.styles.pad_tiny};
 
   background-color: ${({ theme }) => theme.colors.primaryDark};
 

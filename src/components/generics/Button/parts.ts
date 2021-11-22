@@ -3,7 +3,7 @@ import { StyledButtonProps } from "./constants";
 
 export const Button = styled.button<StyledButtonProps>`
   width: ${({ theme }) => theme.styles.width_medium};
-  height: ${({ theme }) => theme.styles.height_short};
+  height: ${({ theme }) => theme.styles.height_low};
 
   background-color: ${({ theme }) => theme.colors.secondary};
 

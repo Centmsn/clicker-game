@@ -12,11 +12,20 @@ const theme: DefaultTheme = {
     yellow: "rgb(245, 225, 49)",
     red: "rgb(255, 103, 79)",
     gray: "rgb(95, 95, 95)",
+    dim: "rgba(0, 0, 0, 0.5)",
   },
   styles: {
+    pad_tiny: "2px",
     pad_small: "10px",
-    width_medium: "200px",
-    height_short: "50px",
+    width_tiny: "30px",
+    width_low: "50px",
+    width_medium: "100px",
+    width_high: "250px",
+    height_tiny: "30px",
+    height_low: "50px",
+    height_medium: "100px",
+    height_high: "250px",
+    border_solid_tight: "2px solid rgb(26, 26, 26)",
   },
 };
 

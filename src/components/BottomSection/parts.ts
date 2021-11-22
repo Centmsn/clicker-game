@@ -27,7 +27,7 @@ export const CardHeader = styled.h3`
   align-items: center;
 
   width: 100%;
-  height: ${({ theme }) => theme.styles.height_short};
+  height: ${({ theme }) => theme.styles.height_low};
   background: ${({ theme }) => theme.colors.secondary};
 `;
 

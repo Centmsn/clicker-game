@@ -9,10 +9,10 @@ export const Label = styled.span`
 
 export const Checkbox = styled.div<StyledCheckboxProps>`
   position: relative;
-  width: 30px;
-  height: 30px;
-  padding: 2px;
-  border: 2px solid ${({ theme }) => theme.colors.black};
+  width: ${({ theme }) => theme.styles.width_tiny};
+  height: ${({ theme }) => theme.styles.height_tiny};
+  padding: ${({ theme }) => theme.styles.pad_tiny};
+  border: ${({ theme }) => theme.styles.border_solid_tight};
 
   background: ${({ theme, isDisabled }) => getBackgroundColor(isDisabled, theme.colors.black)};
   pointer-events: ${({ isDisabled }) => shouldDisablePointerEvents(isDisabled)};

@@ -13,11 +13,20 @@ declare module "styled-components" {
       yellow: string;
       red: string;
       gray: string;
+      dim: string;
     };
     styles: {
+      pad_tiny: string;
       pad_small: string;
+      width_tiny: string;
+      width_low: string;
       width_medium: string;
-      height_short: string;
+      width_high: string;
+      height_tiny: string;
+      height_low: string;
+      height_medium: string;
+      height_high: string;
+      border_solid_tight: string;
     };
   }
 }
