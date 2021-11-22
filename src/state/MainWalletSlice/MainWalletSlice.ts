@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import MainWalletSlice from ".";
 import { INITIAL_INCREMENT, INITIAL_WALLET_VALUE, MIN_INCREMENT, MIN_WALLET_VALUE, initialState } from "./constants";
 
 export const mainWalletSlice = createSlice({
@@ -31,7 +32,10 @@ export const mainWalletSlice = createSlice({
   },
 });
 
-export const { addToWallet, removeFromWallet, clearWallet, clearIncrement, decreaseIncrement, increaseIncrement } =
-  mainWalletSlice.actions;
+export const {
+  actions: { addToWallet, removeFromWallet, clearWallet, clearIncrement, decreaseIncrement, increaseIncrement },
+} = mainWalletSlice;
+
+export const { actions } = mainWalletSlice;
 
 export default mainWalletSlice.reducer;
