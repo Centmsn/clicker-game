@@ -1,11 +1,13 @@
-type variants = "white" | "red" | "green" | "yellow";
+import React from "react";
+
+type ToastVariants = "white" | "red" | "green" | "yellow";
 
 export interface ToastProps {
-  isDisplay: boolean;
-  children: any;
-  variant: variants;
+  isVisible: boolean;
+  variant: ToastVariants;
+  onClose: (e?: React.MouseEvent) => void;
 }
 
 export interface StyledWrapperProps {
-  variant: variants;
+  variant: ToastVariants;
 }
