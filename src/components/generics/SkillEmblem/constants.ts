@@ -1,11 +1,9 @@
+import { UpgradeBase } from "constants/Upgrades";
+
 export interface SkillEmblemProps {
   onClick: () => void;
   isDisabled?: boolean;
-  price: number;
-  level: number;
-  name: string;
-  desc: string;
-  image: string;
+  upgradeData: UpgradeBase;
 }
 
 export interface StyledLevelUpButtonProps {

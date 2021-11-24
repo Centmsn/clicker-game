@@ -1,9 +1,9 @@
+import React from "react";
+import { ExtendedButtonProps } from "components/generics/Button/constants";
 import * as P from "./parts";
-import { ButtonProps } from "components/generics/Button/constants";
-import React, { PropsWithChildren } from "react";
 
 // TODO: variant should change button style - define button styles
-const Button = ({ children, onClick, isDisabled = false, variant = "primary" }: PropsWithChildren<ButtonProps>) => {
+const Button = ({ children, onClick, isDisabled = false, variant = "primary", ...restProps }: ExtendedButtonProps) => {
   const handleOnClick = (event: React.MouseEvent) => {
     if (isDisabled) return;
 
@@ -11,7 +11,7 @@ const Button = ({ children, onClick, isDisabled = false, variant = "primary" }: 
   };
 
   return (
-    <P.Button onClick={handleOnClick} variant={variant} isDisabled={isDisabled}>
+    <P.Button onClick={handleOnClick} variant={variant} isDisabled={isDisabled} {...restProps}>
       {children}
     </P.Button>
   );
