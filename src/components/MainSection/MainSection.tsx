@@ -1,5 +1,6 @@
 import { Title } from "components/generics/Title/parts";
-import MainClickableItem from "components/MainClickableItem";
+import MainClickableItem from "components/MainSection/MainClickableItem";
+import OptionsTab from "components/OptionsTab";
 import Tabs from "./Tabs";
 import * as P from "./parts";
 
@@ -14,10 +15,10 @@ const MainSection = () => {
         <MainClickableItem />
       </P.ButtonWrapper>
 
-      <Tabs tabTitles={["Upgrades", "Achievements", "Shop"]}>
-        <p>First tab component</p>
+      <Tabs tabTitles={["Options", "Achievements", "Upgrades"]}>
+        <OptionsTab />
         <p>Second tab component</p>
-        <p>Third tab component</p>
+        <p>Fourth tab component</p>
       </Tabs>
     </P.Wrapper>
   );

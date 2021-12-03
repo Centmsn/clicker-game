@@ -28,10 +28,20 @@ export const mainWalletSlice = createSlice({
     clearIncrement: (state) => {
       state.incrementPerSecond = INITIAL_INCREMENT;
     },
+    setUpgradesPerClick: (state, action: PayloadAction<number>) => {
+      state.upgradesPerClick = action.payload;
+    },
   },
 });
 
-export const { addToWallet, removeFromWallet, clearWallet, clearIncrement, decreaseIncrement, increaseIncrement } =
-  mainWalletSlice.actions;
+export const {
+  addToWallet,
+  removeFromWallet,
+  clearWallet,
+  clearIncrement,
+  decreaseIncrement,
+  increaseIncrement,
+  setUpgradesPerClick,
+} = mainWalletSlice.actions;
 
 export default mainWalletSlice.reducer;

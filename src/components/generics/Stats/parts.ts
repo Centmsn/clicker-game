@@ -2,16 +2,12 @@ import styled from "styled-components";
 
 export const Stat = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
-  width: 80%;
-  height: 10%;
+  width: 90%;
   margin: 10px 0;
-  border: black solid 2px;
 
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.black};
-
-  background-color: ${({ theme }) => theme.colors.primary};
+  font-size: 0.5rem;
+  color: ${({ theme }) => theme.colors.primary};
 `;

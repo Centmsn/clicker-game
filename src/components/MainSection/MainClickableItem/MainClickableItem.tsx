@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useAppDispatch } from "hooks/useAppDispatch";
-import { addToWallet } from "state";
+import { useAppSelector } from "hooks/useAppSelector";
+import { addToWallet, walletGoldPerClickSelector } from "state";
 import * as P from "./parts";
 
 const MainClickableItem = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const goldPerClick = useAppSelector(walletGoldPerClickSelector);
   const dispatch = useAppDispatch();
 
   const handleMainButtonClick = () => {
@@ -12,7 +14,7 @@ const MainClickableItem = () => {
   };
 
   const handleAddToWallet = () => {
-    dispatch(addToWallet(1));
+    dispatch(addToWallet(goldPerClick));
   };
 
   return (

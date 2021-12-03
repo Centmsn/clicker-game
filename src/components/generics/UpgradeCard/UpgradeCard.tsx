@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import SkillEmblem from "components/generics/SkillEmblem";
 import Picture from "components/generics/Picture";
 import Title from "components/generics/Title";
@@ -6,14 +6,9 @@ import CardOverlay from "./CardOverlay";
 import { UpgradeBase } from "constants/Upgrades";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
-import {
-  increaseUpgradeLevel,
-  increaseIncrement,
-  removeFromWallet,
-  increaseHeroLevel,
-  walletValueSelector,
-} from "state";
+import { increaseUpgradeLevel, increaseIncrement, removeFromWallet, increaseHeroLevel, walletSelector } from "state";
 import { UpgradeCardProps } from "./constants";
+import { calcUpgradePrice } from "./utils";
 import arrow from "assets/Additional_Assets/levelUpArrow.png";
 import pixelStar from "assets/Additional_Assets/retroStar.png";
 import * as P from "./parts";
@@ -28,20 +23,24 @@ const UpgradeCard = ({
   portrait,
 }: UpgradeCardProps): JSX.Element => {
   const [isCardExpanded, setIsCardExpanded] = useState(true);
+  const { value: walletValue, upgradesPerClick } = useAppSelector(walletSelector);
   const dispatch = useAppDispatch();
-  const walletValue = useAppSelector(walletValueSelector);
 
-  const handleBuyUpgrade = (tier: number, upgrade: UpgradeBase) => () => {
-    const actionPayload = {
-      heroId: id,
-      amount: 1,
-      tier,
-    };
+  const handleBuyUpgrade = useCallback(
+    (tier: number, upgrade: UpgradeBase, amount: number) => () => {
+      const incrementValue = upgrade.incrementPerSecond * amount;
+      const actionPayload = {
+        heroId: id,
+        amount,
+        tier,
+      };
 
-    dispatch(removeFromWallet(upgrade.price));
-    dispatch(increaseUpgradeLevel(actionPayload));
-    dispatch(increaseIncrement(upgrade.incrementPerSecond));
-  };
+      dispatch(removeFromWallet(upgrade.price));
+      dispatch(increaseUpgradeLevel(actionPayload));
+      dispatch(increaseIncrement(incrementValue));
+    },
+    [id, dispatch]
+  );
 
   const handleBuyHeroLevel = () => {
     dispatch(removeFromWallet(price));
@@ -49,24 +48,34 @@ const UpgradeCard = ({
     dispatch(increaseIncrement(incrementPerSecond));
   };
 
-  const renderSkillEmblems = () => {
+  const handleCardExpand = () => {
+    setIsCardExpanded((prev) => !prev);
+  };
+
+  const renderSkillEmblems = useCallback(() => {
     return upgrades.map((upgrade, tier) => {
-      const isDisabled = upgrade.price > walletValue;
+      const { availableUpgradesAmount, finalUpgradePrice } = calcUpgradePrice(
+        upgrade.price,
+        upgrade.upgradePriceIncrement,
+        upgradesPerClick,
+        walletValue
+      );
+      const isDisabled = finalUpgradePrice > walletValue;
+      const updatedUpgradeObject = {
+        ...upgrade,
+        price: finalUpgradePrice,
+      };
 
       return (
         <SkillEmblem
-          onClick={handleBuyUpgrade(tier, upgrade)}
+          onClick={handleBuyUpgrade(tier, updatedUpgradeObject, availableUpgradesAmount)}
           isDisabled={isDisabled}
-          price={upgrade.price}
-          level={upgrade.upgradeLevel}
-          name={upgrade.name}
+          upgradeData={updatedUpgradeObject}
           key={tier}
-          desc={upgrade.desc}
-          image={upgrade.image}
         />
       );
     });
-  };
+  }, [upgradesPerClick, upgrades, walletValue, handleBuyUpgrade]);
 
   const shouldRenderOverlay = heroLevel === 0;
   const isHeroLevelUpBtnDisabled = price > walletValue;
@@ -94,9 +103,7 @@ const UpgradeCard = ({
       </P.LevelUpButton>
 
       <P.HeroPortrait portrait={portrait} />
-
-      <P.HideButton onClick={() => setIsCardExpanded((prev) => !prev)} />
-
+      <P.HideButton onClick={handleCardExpand} />
       <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
   );

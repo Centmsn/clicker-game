@@ -4,10 +4,11 @@ import { StyledTitleProps } from "./constants";
 export const Title = styled.header<StyledTitleProps>`
   display: ${({ variant }) => (variant === "small" ? "inline-block" : "block")};
 
-  margin-bottom: ${({ variant }) => (variant === "small" ? null : "30px")};
-  padding-top: ${({ variant }) => (variant === "small" ? null : "30px")};
+  margin-bottom: ${({ variant }) => (variant === "small" ? "5px" : "30px")};
+  padding-top: ${({ variant }) => (variant === "small" ? "5px" : "30px")};
 
-  font-size: ${({ variant }) => (variant === "small" ? null : "1.5rem")};
-  color: ${({ variant }) => (variant === "small" ? null : ({ theme }) => theme.colors.black)};
-  text-align: ${({ variant }) => (variant === "small" ? null : "center")};
+  font-size: ${({ variant }) => (variant === "small" ? "0.8rem" : "1.2rem")};
+  color: ${({ variant }) =>
+    variant === "small" ? ({ theme }) => theme.colors.black : ({ theme }) => theme.colors.primary};
+  text-align: ${({ variant }) => (variant === "small" ? "left" : "center")};
 `;

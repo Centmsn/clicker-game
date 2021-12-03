@@ -18,8 +18,6 @@ export interface ButtonProps {
   onClick: (e: React.MouseEvent) => void;
 }
 
-export type StyledButtonProps = Pick<ButtonProps, "variant" | "isDisabled" | "size">;
-
 export const Sizes = {
   small: "80px",
   large: "200px",
@@ -45,3 +43,6 @@ export const Variants = {
     background-color: ${({ theme }) => theme.colors.secondary};
   `,
 };
+export type ExtendedButtonProps = React.PropsWithChildren<ButtonProps & React.HTMLAttributes<HTMLButtonElement>>;
+
+export type StyledButtonProps = Pick<ButtonProps, "variant" | "isDisabled" | "size">;
