@@ -87,17 +87,15 @@ const UpgradeCard = ({
         <P.SubTitle> increments {heroIncrementPerSecond} gold /s </P.SubTitle>
       </P.HeroInfo>
 
-      <P.HeroPortrait portrait={portrait} />
-
-      <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
-        levelUp <Picture src={arrow} alt="levepUp" />
-      </P.LevelUpButton>
-
-      <P.HeroPortrait portrait={portrait} />
+      <P.DissapearingWrapper isExpanded={isCardExpanded}>
+        <P.HeroPortrait portrait={portrait} />
+        <P.LevelUpButton onClick={handleBuyHeroLevel} isDisabled={price > walletValue}>
+          levelUp <Picture src={arrow} alt="levepUp" />
+        </P.LevelUpButton>
+        <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
+      </P.DissapearingWrapper>
 
       <P.HideButton onClick={() => setIsCardExpanded((prev) => !prev)} />
-
-      <P.UpgradesSkillsWrapper>{renderSkillEmblems()}</P.UpgradesSkillsWrapper>
     </P.Card>
   );
 };

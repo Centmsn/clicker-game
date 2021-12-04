@@ -10,8 +10,6 @@ export const Wrapper = styled.div`
   transform: translateY(100%);
   width: 100%;
   height: 100%;
-
-  background: red;
 `;
 
 export const Tab = styled.div<StyledTabProps>`
@@ -21,7 +19,6 @@ export const Tab = styled.div<StyledTabProps>`
   transform: translateY(${({ isVisible }) => (isVisible ? "-90%" : 0)});
   height: 100%;
   width: 100%;
-
   transition: 300ms;
 `;
 
@@ -54,6 +51,5 @@ export const TabBody = styled.div`
   height: 100%;
 
   background-color: ${({ theme }) => fadeOut(theme.colors.primaryDark, 0.95)};
-
   overflow: auto;
 `;

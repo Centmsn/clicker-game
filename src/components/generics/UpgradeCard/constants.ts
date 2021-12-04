@@ -13,3 +13,7 @@ export interface StyledLevelUpBtn {
 export interface CardProps {
   isExpanded?: boolean;
 }
+
+export interface DissapearingWrapperProps {
+  isExpanded: boolean;
+}

@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { StyledLevelUpBtn, StyledHeroPortraitProps, CardProps } from "./constants";
+import { StyledLevelUpBtn, StyledHeroPortraitProps, CardProps, DissapearingWrapperProps } from "./constants";
 
 export const Card = styled.div<CardProps>`
   position: relative;
 
-  display: ${({ isExpanded }) => (isExpanded ? "grid" : "block")};
+  display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+  overflow: hidden;
 
   width: 100%;
   height: ${({ isExpanded }) => (isExpanded ? "35%" : "5%")};
@@ -14,9 +15,8 @@ export const Card = styled.div<CardProps>`
   margin-bottom: 20px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
-  overflow: hidden;
 
-  transition: 0.2s;
+  transition: 0.5s;
 `;
 
 export const HeroInfo = styled.p`
@@ -26,7 +26,7 @@ export const HeroInfo = styled.p`
 `;
 
 export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
-  grid-area: 3/1/9/4;
+  height: 50%;
 
   background-image: url(${({ portrait }) => portrait});
   background-size: contain;
@@ -34,9 +34,9 @@ export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
 `;
 
 export const UpgradesSkillsWrapper = styled.div`
-  grid-area: 3/4/13/13;
-
   overflow: auto;
+
+  width: 70%;
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -53,29 +53,23 @@ export const UpgradesSkillsWrapper = styled.div`
 `;
 
 export const LevelUpButton = styled.button<StyledLevelUpBtn>`
-  grid-area: 10/1/11/4;
-  position: relative;
-  top: 50%;
-  left: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%, -50%);
 
+  transition: 0.5s;
   border: solid 2px ${({ theme }) => theme.colors.primary};
   border-radius: 10%;
-  width: 80%;
-  height: 100%;
+  width: 120px;
+  height: 30px;
 
   background-color: ${({ theme }) => theme.colors.primaryDark};
 
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.5rem;
 
-  transition: 0.3s;
-  filter: grayscale(${(isDisabled) => (isDisabled ? 1 : 0)});
-  pointer-events: ${(isDisabled) => (isDisabled ? "none" : "auto")};
+  filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
+  pointer-events: ${({ isDisabled }) => (isDisabled ? "none " : "auto")};
   cursor: pointer;
 
   & img {
@@ -115,4 +109,16 @@ export const SubTitle = styled.p`
 
 export const Sup = styled.sup`
   font-size: 0.4rem;
+`;
+
+export const DissapearingWrapper = styled.div<DissapearingWrapperProps>`
+  grid-area: 3/1/13/13;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transform: translateY(${({ isExpanded }) => (isExpanded ? "0" : "500%")});
+
+  transition: 0.5s;
 `;
