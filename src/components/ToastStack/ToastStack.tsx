@@ -1,24 +1,22 @@
-import { LayoutGroup } from "framer-motion";
+import { useContext } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Toast from "components/generics/Toast";
-import { useAppSelector } from "hooks/useAppSelector";
-import { toastStackStackSelector } from "state";
-import { useToastStack } from "hooks/useToastStack";
+import ToastStackContext from "contexts/ToastStackContext";
 import * as P from "./parts";
 
 const ToastStack = () => {
-  const { closeSelectedToast } = useToastStack();
-  const toastStack = useAppSelector(toastStackStackSelector);
+  const { closeToastById, toastStack } = useContext(ToastStackContext);
 
   return (
-    <P.StackWrapper>
-      {/* <LayoutGroup> */}
-      {toastStack.map(({ msg, id, variant }) => (
-        <Toast variant={variant} onClose={() => closeSelectedToast(id)} key={id} isVisible>
-          {msg}
-        </Toast>
-      ))}
-      {/* </LayoutGroup> */}
-    </P.StackWrapper>
+    <AnimatePresence>
+      <P.StackWrapper>
+        {toastStack.map(({ msg, id, variant }) => (
+          <Toast variant={variant} onClose={() => closeToastById(id)} key={id} isVisible>
+            {msg}
+          </Toast>
+        ))}
+      </P.StackWrapper>
+    </AnimatePresence>
   );
 };
 

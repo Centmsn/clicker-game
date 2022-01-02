@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StackWrapper = styled.div`
+const variants = { hidden: { x: "-25vw" } };
+
+export const StackWrapper = styled(motion.div).attrs(() => ({
+  animate: "hidden",
+  variants,
+}))`
   position: absolute;
   left: 5px;
   bottom: 5px;

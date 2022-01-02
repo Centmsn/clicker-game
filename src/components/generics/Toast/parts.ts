@@ -2,15 +2,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { StyledWrapperProps } from "./constants";
 
-const variants = {
-  visible: { x: 0, transition: { duration: 0.5 } },
-  hidden: { x: "-50vh" },
-  exit: { x: "-50vh" },
-};
+const variants = { hidden: { x: "25vw", transition: { duration: 0.1 } } };
 
 export const Wrapper = styled(motion.div).attrs(() => ({
-  initial: "hidden",
-  exit: "exit",
   variants,
 }))<StyledWrapperProps>`
   display: flex;
