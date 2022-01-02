@@ -46,7 +46,7 @@ const OptionsTab = () => {
 
       <P.OptionWrapper>
         <P.Description>Enable autosave (every 5 minutes)</P.Description>
-        <Checkbox onClick={toggleAutosave} label="Test" isChecked={isAutosaveEnabled} />
+        <Checkbox onClick={toggleAutosave} isChecked={isAutosaveEnabled} />
       </P.OptionWrapper>
     </P.Wrapper>
   );
