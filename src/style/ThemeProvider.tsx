@@ -12,6 +12,52 @@ const theme: DefaultTheme = {
     yellow: "rgb(245, 225, 49)",
     red: "rgb(255, 103, 79)",
     gray: "rgb(95, 95, 95)",
+    dim: "rgba(0, 0, 0, 0.5)",
+  },
+  styles: {
+    paddings: {
+      tiny: "2px",
+      small: "5px",
+      medium: "10px",
+      large: "20px",
+    },
+    width: {
+      wee: "10px",
+      tiny: "30px",
+      low: "50px",
+      medium: "100px",
+      high: "250px",
+    },
+    height: {
+      wee: "10px",
+      tiny: "30px",
+      low: "50px",
+      medium: "100px",
+      high: "250px",
+    },
+    border: {
+      solid_black_tight: "2px solid rgb(26, 26, 26)",
+      solid_white_tight: "2px solid rgb(255, 255, 255)",
+      solid_black_normal: "8px solid rgb(26,26,26)",
+      solid_gray_normal: "8px solid rgb(95,95,95)",
+    },
+    font_sizes: {
+      tiny: "0.4rem",
+      small: "0.7rem",
+      large: "2rem",
+    } as const,
+    transitions: {
+      fast: "0.3s",
+    },
+    margins: {
+      tiny: "5px",
+      small: "10px",
+      medium: "20px",
+    },
+    line_height: {
+      tiny: "35px",
+      great: "75px",
+    } as const,
   },
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import { css } from "styled-components";
 
 export enum ButtonVariants {
@@ -11,12 +11,12 @@ export enum ButtonSizes {
   LARGE = "LARGE",
 }
 
-export interface ButtonProps {
+export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariants;
   isDisabled?: boolean;
   size: ButtonSizes;
   onClick: (e: React.MouseEvent) => void;
-}
+};
 
 export const Sizes = {
   small: "80px",
