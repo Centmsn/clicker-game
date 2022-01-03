@@ -18,7 +18,7 @@ export const Card = styled.div`
 
   height: 100%;
   max-width: 33%;
-  padding: 10px;
+  padding: ${({ theme }) => theme.styles.paddings.medium};
 `;
 
 export const CardHeader = styled.h3`
@@ -27,7 +27,7 @@ export const CardHeader = styled.h3`
   align-items: center;
 
   width: 100%;
-  height: 50px;
+  height: ${({ theme }) => theme.styles.height.low};
   background: ${({ theme }) => theme.colors.secondary};
 `;
 
@@ -37,5 +37,4 @@ export const CardBody = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: calc(100% - 50px);
 `;

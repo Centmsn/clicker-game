@@ -25,13 +25,16 @@ const getBtnSize = (size: string | undefined) => {
 
 export const Button = styled.button<StyledButtonProps>`
   width: ${({ size }) => getBtnSize(size)};
-  height: 50px;
+  height: ${({ theme }) => theme.styles.height.low};
 
-  font-size: 0.7rem;
+  background-color: ${({ theme }) => theme.colors.secondary};
+
+  font-size: ${({ theme }) => theme.styles.font_sizes.small};
+
   color: ${({ theme }) => theme.colors.black};
   ${({ variant }) => getBtnVariant(variant)}
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   cursor: pointer;
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});

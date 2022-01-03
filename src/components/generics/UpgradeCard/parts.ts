@@ -10,19 +10,19 @@ export const Card = styled.div<CardProps>`
 
   width: 100%;
   height: ${({ isExpanded }) => (isExpanded ? "35%" : "5%")};
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: ${({ theme }) => theme.styles.paddings.medium};
+  margin-bottom: ${({ theme }) => theme.styles.margins.medium};
 
   background-color: ${({ theme }) => theme.colors.secondary};
   overflow: hidden;
 
-  transition: 0.2s;
+  transition: ${({ theme }) => theme.styles.transitions.fast}; ;
 `;
 
 export const HeroInfo = styled.p`
   grid-area: 1/1/3/8;
 
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.small}; ;
 `;
 
 export const HeroPortrait = styled.div<StyledHeroPortraitProps>`
@@ -39,7 +39,7 @@ export const UpgradesSkillsWrapper = styled.div`
   overflow: auto;
 
   &::-webkit-scrollbar {
-    width: 12px;
+    width: ${({ theme }) => theme.styles.width.wee};
   }
 
   &::-webkit-scrollbar-track {
@@ -48,7 +48,7 @@ export const UpgradesSkillsWrapper = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.primary};
-    border: solid 2px ${({ theme }) => theme.colors.black};
+    border: ${({ theme }) => theme.styles.border.solid_black_tight};
   }
 `;
 
@@ -71,9 +71,9 @@ export const LevelUpButton = styled.button<StyledLevelUpBtn>`
   background-color: ${({ theme }) => theme.colors.primaryDark};
 
   color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.5rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.tiny};
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
   filter: grayscale(${(isDisabled) => (isDisabled ? 1 : 0)});
   pointer-events: ${(isDisabled) => (isDisabled ? "none" : "auto")};
   cursor: pointer;
@@ -95,24 +95,24 @@ export const HideButton = styled.div`
   top: 10px;
   right: 10px;
 
-  width: 40px;
-  height: 20px;
+  width: ${({ theme }) => theme.styles.width.low};
+  height: ${({ theme }) => theme.styles.height.tiny};
 
   background-color: ${({ theme }) => theme.colors.black};
   border-radius: 3px;
   cursor: pointer;
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast}; ;
 `;
 
 export const SubTitle = styled.p`
-  border-top: 1px solid black;
-  padding-top: 3px;
+  border-top: ${({ theme }) => theme.styles.border.solid_black_tight};
+  padding-top: ${({ theme }) => theme.styles.paddings.tiny};
 
-  font-size: 0.4rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.tiny};
   font-style: italic;
 `;
 
 export const Sup = styled.sup`
-  font-size: 0.4rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.tiny};
 `;

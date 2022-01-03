@@ -6,8 +6,8 @@ export const Stat = styled.div`
   align-items: center;
 
   width: 90%;
-  margin: 10px 0;
+  margin: ${({ theme }) => theme.styles.margins.small} 0;
 
-  font-size: 0.5rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.small};
   color: ${({ theme }) => theme.colors.primary};
 `;

@@ -8,7 +8,7 @@ export const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ theme }) => theme.colors.dim};
 `;
 
 export const ModalWindow = styled.div`
@@ -32,9 +32,9 @@ export const CloseButton = styled.span`
   top: 0;
   right: 0;
 
-  font-size: 2rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.large};
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
 
   &:hover {
     transform: scale(1.1);

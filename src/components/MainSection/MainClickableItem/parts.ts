@@ -5,12 +5,12 @@ import treasure from "assets/Backgrounds/treasureChest.png";
 export const Button = styled.button<StyledButtonProps>`
   transform: scale(${({ isClicked }) => (isClicked ? 0.85 : 1)});
 
-  height: 300px;
-  width: 300px;
+  height: ${({ theme }) => theme.styles.height.high};
+  width: ${({ theme }) => theme.styles.width.high};
 
   background: url(${treasure}) no-repeat center / cover;
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
 
   &:hover {
     cursor: pointer;
