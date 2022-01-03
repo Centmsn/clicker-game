@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ToastVariants } from "components/generics/Toast";
-import Button from "components/generics/Button";
+import Button, { ButtonSizes } from "components/generics/Button";
 import Checkbox from "components/generics/Checkbox";
 import { useAppSelector } from "hooks/useAppSelector";
 import { saveItemToLS } from "utils/localStorage/saveItem";
@@ -41,7 +41,9 @@ const OptionsTab = () => {
     <P.Wrapper>
       <P.OptionWrapper>
         <P.Description>Click to manually save the game</P.Description>
-        <Button onClick={handleSaveGame}>Save game</Button>
+        <Button onClick={handleSaveGame} size={ButtonSizes.SMALL}>
+          Save game
+        </Button>
       </P.OptionWrapper>
 
       <P.OptionWrapper>

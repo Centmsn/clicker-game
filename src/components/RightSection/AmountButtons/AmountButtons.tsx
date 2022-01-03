@@ -1,4 +1,5 @@
 import Text from "components/generics/Text";
+import { ButtonSizes } from "components/generics/Button";
 import { buttons } from "./constants";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
@@ -19,14 +20,15 @@ const AmountButtons = () => {
 
       <P.ButtonsWrapper>
         {buttons.map((button) => {
-          //   Temporary fix - it will probably require additional props in Button component
+          //!   Temporary fix - it will probably require additional props in Button component
           const isButtonActive = button.value === upgradesPerClick;
 
           return (
             <P.StyledButton
               onClick={() => handleSetUpgradesPerClick(button.value)}
-              // Temporary fix - this probably requires additional property passed to the button element
+              //! Temporary fix - this probably requires additional property passed to the button element
               style={{ border: isButtonActive ? "2px solid black" : "none" }}
+              size={ButtonSizes.SMALL}
             >
               {button.label}
             </P.StyledButton>
