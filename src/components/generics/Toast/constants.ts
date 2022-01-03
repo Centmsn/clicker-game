@@ -1,13 +1,16 @@
-import React from "react";
+import { PropsWithChildren } from "react";
 
-type ToastVariants = "white" | "red" | "green" | "yellow";
+export enum ToastVariants {
+  WHITE = "white",
+  RED = "red",
+  GREEN = "green",
+  YELLOW = "yellow",
+}
 
-export interface ToastProps {
+export type ToastProps = PropsWithChildren<{
   isVisible: boolean;
   variant: ToastVariants;
-  onClose: (e?: React.MouseEvent) => void;
-}
+  onClose: () => void;
+}>;
 
-export interface StyledWrapperProps {
-  variant: ToastVariants;
-}
+export type StyledWrapperProps = Required<Pick<ToastProps, "variant">>;

@@ -1,39 +1,44 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { StyledWrapperProps } from "./constants";
 
-export const Wrapper = styled.div<StyledWrapperProps>`
-  position: absolute;
-  top: 0;
-  left: 0;
+const variants = { hidden: { x: "25vw", transition: { duration: 0.1 } } };
 
+export const Wrapper = styled(motion.div).attrs(() => ({
+  variants,
+}))<StyledWrapperProps>`
   display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
 
   width: 300px;
   height: 75px;
+  padding: 5px;
+  margin: 5px 0;
   border: solid black 2px;
 
   background-color: ${({ variant, theme }) => theme.colors[variant]};
 
   text-align: center;
-  line-height: 75px;
   color: ${({ theme }) => theme.colors.black};
+  transition: 300ms;
 `;
 
 export const CloseButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
 `;
 
-export const Info = styled.p`
-  margin: 0 auto;
+export const ButtonWrapper = styled.div`
+  width: 100%;
 
-  font-size: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const ContentWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

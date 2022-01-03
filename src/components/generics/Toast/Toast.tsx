@@ -1,18 +1,16 @@
-import { PropsWithChildren } from "react";
-import { createPortal } from "react-dom";
 import { ToastProps } from "./constants";
 import * as P from "./parts";
 
-const Toast = ({ children, variant, isVisible, onClose }: PropsWithChildren<ToastProps>) => {
+const Toast = ({ children, variant, isVisible, onClose }: ToastProps) => {
   if (!isVisible) return null;
 
-  return createPortal(
-    <P.Wrapper variant={variant}>
-      <P.Info>Zapisano zmiany</P.Info>
-      {children}
-      <P.CloseButton onClick={onClose}>X</P.CloseButton>
-    </P.Wrapper>,
-    document.getElementById("modals")!
+  return (
+    <P.Wrapper variant={variant} exit="exit">
+      <P.ButtonWrapper>
+        <P.CloseButton onClick={onClose}>X</P.CloseButton>
+      </P.ButtonWrapper>
+      <P.ContentWrapper>{children}</P.ContentWrapper>
+    </P.Wrapper>
   );
 };
 

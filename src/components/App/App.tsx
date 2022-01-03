@@ -4,6 +4,7 @@ import OptionsSection from "components/BottomSection";
 import MainSection from "components/MainSection";
 import UpgradesSection from "components/RightSection";
 import GameContext from "contexts/GameContext";
+import ToastStack from "components/ToastStack";
 import * as P from "./parts";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <MainSection />
       <OptionsSection />
       <UpgradesSection />
+      <ToastStack />
     </P.Container>
   );
 };
