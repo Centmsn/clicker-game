@@ -11,6 +11,5 @@ export const Wrapper = styled.li`
 export const Description = styled.p`
   width: 100%;
   display: block;
-
-  line-height: 2;
+  line-height: ${({ theme }) => theme.styles.line_height.tiny};
 `;

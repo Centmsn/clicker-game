@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { StyledButtonProps } from "./constants";
 
 export const Button = styled.button<StyledButtonProps>`
-  width: ${({ theme }) => theme.styles.width_medium};
-  height: ${({ theme }) => theme.styles.height_low};
+  width: ${({ theme }) => theme.styles.width.medium};
+  height: ${({ theme }) => theme.styles.height.low};
 
   background-color: ${({ theme }) => theme.colors.secondary};
 
-  font-size: 0.7rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.small};
   color: ${({ theme }) => theme.colors.black};
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   cursor: pointer;
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});

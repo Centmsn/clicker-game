@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 32%;
+  height: 33%;
 
-  font-size: 7px;
+  font-size: ${({ theme }) => theme.styles.font_sizes.tiny};
 `;
 
 export const SkillDesc = styled(Wrapper)`
@@ -18,16 +18,14 @@ export const SkillDesc = styled(Wrapper)`
   justify-content: flex-start;
 
   height: 100%;
-  padding: 5px;
-
-  line-height: 0.5rem;
+  padding: ${({ theme }) => theme.styles.paddings.small};
 `;
 
 export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`
   width: 25%;
   height: 90%;
 
-  border: ${({ theme }) => theme.styles.border_solid_tight};
+  border: ${({ theme }) => theme.styles.border.solid_black_tight};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   filter: grayscale(${({ isDisabled }) => (isDisabled ? 1 : 0)});
   cursor: pointer;
@@ -40,13 +38,13 @@ export const SkillEmblem = styled.div<StyledLevelUpButtonProps>`
 `;
 
 export const LevelUpButton = styled.button<StyledLevelUpButtonProps>`
-  border: solid 2px white;
+  border: ${({ theme }) => theme.styles.border.solid_white_tight};
   border-radius: 10%;
-  padding: ${({ theme }) => theme.styles.pad_tiny};
+  padding: ${({ theme }) => theme.styles.paddings.tiny};
 
   background-color: ${({ theme }) => theme.colors.primaryDark};
 
-  font-size: 0.4rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.tiny};
   color: ${({ theme }) => theme.colors.primary};
   pointer-events: ${({ isDisabled }) => (isDisabled ? "none" : "auto")};
   cursor: pointer;

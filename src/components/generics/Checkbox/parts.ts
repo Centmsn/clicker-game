@@ -4,15 +4,15 @@ import { shouldDisablePointerEvents } from "style/utils";
 import { getBackgroundColor } from "./utils";
 
 export const Label = styled.span`
-  margin-right: 10px;
+  margin-right: ${({ theme }) => theme.styles.margins.small};
 `;
 
 export const Checkbox = styled.div<StyledCheckboxProps>`
   position: relative;
-  width: ${({ theme }) => theme.styles.width_tiny};
-  height: ${({ theme }) => theme.styles.height_tiny};
-  padding: ${({ theme }) => theme.styles.pad_tiny};
-  border: ${({ theme }) => theme.styles.border_solid_tight};
+  width: ${({ theme }) => theme.styles.width.tiny};
+  height: ${({ theme }) => theme.styles.height.tiny};
+  padding: ${({ theme }) => theme.styles.paddings.tiny};
+  border: ${({ theme }) => theme.styles.border.solid_black_tight};
 
   background: ${({ theme, isDisabled }) => getBackgroundColor(isDisabled, theme.colors.black)};
   pointer-events: ${({ isDisabled }) => shouldDisablePointerEvents(isDisabled)};
@@ -37,5 +37,5 @@ export const CheckboxIcon = styled.div<StyledCheckboxIconProps>`
 
   background-color: ${({ theme }) => theme.colors.black};
 
-  transition: 300ms;
+  transition: ${({ theme }) => theme.styles.transitions.fast}; ;
 `;

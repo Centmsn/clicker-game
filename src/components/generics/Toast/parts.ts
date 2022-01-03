@@ -8,14 +8,14 @@ export const Wrapper = styled.div<StyledWrapperProps>`
 
   display: flex;
 
-  width: ${({ theme }) => theme.styles.width_medium};
-  height: ${({ theme }) => theme.styles.height_medium};
-  border: ${({ theme }) => theme.styles.border_solid_tight};
+  width: ${({ theme }) => theme.styles.width.medium};
+  height: ${({ theme }) => theme.styles.height.medium};
+  border: ${({ theme }) => theme.styles.border.solid_black_tight};
 
   background-color: ${({ variant, theme }) => theme.colors[variant]};
 
   text-align: center;
-  line-height: 75px;
+  line-height: ${({ theme }) => theme.styles.line_height.great};
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -24,9 +24,9 @@ export const CloseButton = styled.button`
   top: 0;
   right: 0;
 
-  width: 20px;
-  height: 20px;
-  margin: 5px;
+  width: ${({ theme }) => theme.styles.width.tiny};
+  height: ${({ theme }) => theme.styles.height.tiny};
+  margin: ${({ theme }) => theme.styles.margins.tiny};
 
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
@@ -35,5 +35,5 @@ export const CloseButton = styled.button`
 export const Info = styled.p`
   margin: 0 auto;
 
-  font-size: 0.8rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.small};
 `;

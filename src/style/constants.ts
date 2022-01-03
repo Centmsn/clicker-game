@@ -16,17 +16,49 @@ declare module "styled-components" {
       dim: string;
     };
     styles: {
-      pad_tiny: string;
-      pad_small: string;
-      width_tiny: string;
-      width_low: string;
-      width_medium: string;
-      width_high: string;
-      height_tiny: string;
-      height_low: string;
-      height_medium: string;
-      height_high: string;
-      border_solid_tight: string;
+      paddings: {
+        tiny: string;
+        small: string;
+        medium: string;
+        large: string;
+      };
+      width: {
+        wee: string;
+        tiny: string;
+        low: string;
+        medium: string;
+        high: string;
+      };
+      height: {
+        wee: string;
+        tiny: string;
+        low: string;
+        medium: string;
+        high: string;
+      };
+      border: {
+        solid_black_tight: string;
+        solid_white_tight: string;
+        solid_black_normal: string;
+        solid_gray_normal: string;
+      };
+      font_sizes: {
+        tiny: string;
+        small: string;
+        large: string;
+      };
+      transitions: {
+        fast: string;
+      };
+      margins: {
+        tiny: string;
+        small: string;
+        medium: string;
+      };
+      line_height: {
+        tiny: string;
+        great: string;
+      };
     };
   }
 }

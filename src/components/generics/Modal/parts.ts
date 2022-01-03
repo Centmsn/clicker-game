@@ -32,9 +32,9 @@ export const CloseButton = styled.span`
   top: 0;
   right: 0;
 
-  font-size: 2rem;
+  font-size: ${({ theme }) => theme.styles.font_sizes.large};
 
-  transition: 0.3s;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
 
   &:hover {
     transform: scale(1.1);

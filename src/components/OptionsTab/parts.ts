@@ -5,5 +5,5 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  padding: 20px 10px;
+  padding: ${({ theme }) => theme.styles.paddings.large} ${({ theme }) => theme.styles.paddings.medium};
 `;

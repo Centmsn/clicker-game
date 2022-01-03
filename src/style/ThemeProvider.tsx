@@ -15,17 +15,49 @@ const theme: DefaultTheme = {
     dim: "rgba(0, 0, 0, 0.5)",
   },
   styles: {
-    pad_tiny: "2px",
-    pad_small: "10px",
-    width_tiny: "30px",
-    width_low: "50px",
-    width_medium: "100px",
-    width_high: "250px",
-    height_tiny: "30px",
-    height_low: "50px",
-    height_medium: "100px",
-    height_high: "250px",
-    border_solid_tight: "2px solid rgb(26, 26, 26)",
+    paddings: {
+      tiny: "2px",
+      small: "5px",
+      medium: "10px",
+      large: "20px",
+    },
+    width: {
+      wee: "10px",
+      tiny: "30px",
+      low: "50px",
+      medium: "100px",
+      high: "250px",
+    },
+    height: {
+      wee: "10px",
+      tiny: "30px",
+      low: "50px",
+      medium: "100px",
+      high: "250px",
+    },
+    border: {
+      solid_black_tight: "2px solid rgb(26, 26, 26)",
+      solid_white_tight: "2px solid rgb(255, 255, 255)",
+      solid_black_normal: "8px solid rgb(26,26,26)",
+      solid_gray_normal: "8px solid rgb(95,95,95)",
+    },
+    font_sizes: {
+      tiny: "0.4rem",
+      small: "0.7rem",
+      large: "2rem",
+    } as const,
+    transitions: {
+      fast: "0.3s",
+    },
+    margins: {
+      tiny: "5px",
+      small: "10px",
+      medium: "20px",
+    },
+    line_height: {
+      tiny: "35px",
+      great: "75px",
+    } as const,
   },
 };
 

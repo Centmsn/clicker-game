@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
 
-  background: red;
+  background: ${({ theme }) => theme.colors.red};
 `;
 
 export const Tab = styled.div<StyledTabProps>`
@@ -22,7 +22,7 @@ export const Tab = styled.div<StyledTabProps>`
   height: 100%;
   width: 100%;
 
-  transition: 300ms;
+  transition: ${({ theme }) => theme.styles.transitions.fast};
 `;
 
 export const TabHeader = styled.div<StyledTabHeaderProps>`
@@ -35,13 +35,13 @@ export const TabHeader = styled.div<StyledTabHeaderProps>`
   transform: translateX(${({ index, isVisible }) => calcTranslateX(isVisible, index)});
   width: ${({ width, isVisible }) => (isVisible ? 100 : width)}%;
   height: 10%;
-  padding: 0 20px;
+  padding: 0 ${({ theme }) => theme.styles.paddings.large};
 
   background-color: ${({ theme }) => theme.colors.secondary};
-  border-left: 8px solid ${({ theme }) => theme.colors.black};
-  border-bottom: 8px solid ${({ theme }) => theme.colors.gray};
-  border-top: 8px solid ${({ theme }) => theme.colors.gray};
-  border-right: 8px solid ${({ theme }) => theme.colors.black};
+  border-top: ${({ theme }) => theme.styles.border.solid_gray_normal};
+  border-right: ${({ theme }) => theme.styles.border.solid_black_normal};
+  border-bottom: ${({ theme }) => theme.styles.border.solid_gray_normal};
+  border-left: ${({ theme }) => theme.styles.border.solid_black_normal};
 
   cursor: pointer;
   pointer-events: ${({ isVisible }) => (isVisible ? "none" : "auto")};
