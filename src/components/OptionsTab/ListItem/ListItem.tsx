@@ -6,7 +6,6 @@ const ListItem = ({ listItemData }: ListItemProps) => {
   return (
     <P.Wrapper>
       <P.Description>{listItemData.description}</P.Description>
-      <Button onClick={listItemData.onClick}>{listItemData.label}</Button>
     </P.Wrapper>
   );
 };
