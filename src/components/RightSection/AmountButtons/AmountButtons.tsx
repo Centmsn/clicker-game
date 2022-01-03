@@ -1,7 +1,6 @@
 import Text from "components/generics/Text";
 import { ButtonSizes } from "components/generics/Button";
 import { buttons } from "./constants";
-import { ButtonSizes } from "components/generics/Button/constants";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
 import { setUpgradesPerClick, walletUpgradesPerClickSelector } from "state";
@@ -26,7 +25,6 @@ const AmountButtons = () => {
 
           return (
             <P.StyledButton
-              size={ButtonSizes.SMALL}
               onClick={() => handleSetUpgradesPerClick(button.value)}
               //! Temporary fix - this probably requires additional property passed to the button element
               style={{ border: isButtonActive ? "2px solid black" : "none" }}
