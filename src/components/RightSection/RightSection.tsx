@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Title } from "components/generics/Title/parts";
 import UpgradeCard, { CardSkeleton } from "components/generics/UpgradeCard";
+import AmountButtons from "./AmountButtons";
 import { useAppSelector } from "hooks/useAppSelector";
 import { walletIpsSelector, heroesSelector } from "state";
 import { UpgradesSectionProps } from "./constants";
@@ -29,6 +31,7 @@ const UpgradesSection = ({}: UpgradesSectionProps): JSX.Element => {
   return (
     <P.Wrapper>
       <Title variant="large">Upgrades</Title>
+      <AmountButtons />
       {renderHeroCards()}
     </P.Wrapper>
   );
