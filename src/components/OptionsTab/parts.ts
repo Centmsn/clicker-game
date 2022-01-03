@@ -7,3 +7,19 @@ export const Wrapper = styled.div`
 
   padding: ${({ theme }) => theme.styles.paddings.large} ${({ theme }) => theme.styles.paddings.medium};
 `;
+
+export const OptionWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  text-align: center;
+`;
+
+export const Description = styled.p`
+  width: 100%;
+  display: block;
+
+  line-height: 2;
+`;
