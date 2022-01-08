@@ -20,6 +20,12 @@ const OptionsTab = () => {
     openNewToast("Game saved!", ToastVariants.GREEN);
   };
 
+  const handleRestartGame = () => {
+    // localStorage.clear();
+    localStorage.removeItem(LocalStorageKeys.gameState);
+    openNewToast("Game restarted!", ToastVariants.RED);
+  };
+
   const toggleAutosave = () => {
     if (isAutosaveEnabled) {
       const disabledCorrectly = stopAutosave();
@@ -43,6 +49,9 @@ const OptionsTab = () => {
         <P.Description>Click to manually save the game</P.Description>
         <Button onClick={handleSaveGame} size={ButtonSizes.SMALL}>
           Save game
+        </Button>
+        <Button onClick={handleRestartGame} size={ButtonSizes.SMALL}>
+          Restart game
         </Button>
       </P.OptionWrapper>
 
