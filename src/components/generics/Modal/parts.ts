@@ -42,3 +42,14 @@ export const CloseButton = styled.span`
     cursor: pointer;
   }
 `;
+
+export const Confirmation = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const ConfirmBtn = styled.button`
+  border: ${({ theme }) => theme.styles.border.solid_black_normal};
+  padding: ${({ theme }) => theme.styles.paddings.small};
+  cursor: pointer;
+`;

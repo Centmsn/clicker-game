@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ToastVariants } from "components/generics/Toast";
 import Button, { ButtonSizes } from "components/generics/Button";
 import Checkbox from "components/generics/Checkbox";
@@ -9,11 +9,13 @@ import { captureStoreState } from "utils/captureStoreState";
 import ToastStackContext from "contexts/ToastStackContext";
 import GameContext from "contexts/GameContext";
 import * as P from "./parts";
+import Modal from "components/generics/Modal";
 
 const OptionsTab = () => {
   const appState = useAppSelector((state) => state);
   const { openNewToast } = useContext(ToastStackContext);
   const { startAutosave, stopAutosave, isAutosaveEnabled } = useContext(GameContext);
+  const [displayConfirm, setDisplayConfirm] = useState(false);
 
   const handleSaveGame = () => {
     saveItemToLS(LocalStorageKeys.gameState, captureStoreState(appState));
@@ -21,7 +23,6 @@ const OptionsTab = () => {
   };
 
   const handleRestartGame = () => {
-    // localStorage.clear();
     localStorage.removeItem(LocalStorageKeys.gameState);
     openNewToast("Game restarted!", ToastVariants.RED);
   };
@@ -50,7 +51,21 @@ const OptionsTab = () => {
         <Button onClick={handleSaveGame} size={ButtonSizes.SMALL}>
           Save game
         </Button>
-        <Button onClick={handleRestartGame} size={ButtonSizes.SMALL}>
+      </P.OptionWrapper>
+
+      {displayConfirm && (
+        <Modal callback={handleRestartGame} setVisible={setDisplayConfirm} isVisible={displayConfirm}>
+          Are you sure restart the game ?
+        </Modal>
+      )}
+
+      <P.OptionWrapper>
+        <P.Description>Click to restart game</P.Description>
+        <Button
+          onClick={() => setDisplayConfirm((value) => !value)}
+          isDisabled={displayConfirm}
+          size={ButtonSizes.LARGE}
+        >
           Restart game
         </Button>
       </P.OptionWrapper>
