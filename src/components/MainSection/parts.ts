@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import coinsBackground from "assets/Backgrounds/coinsBackground.jpg";
+import islandBackground from "assets/Backgrounds/islandBackground.gif";
 
 export const Wrapper = styled.div`
   position: relative;
   grid-area: 1/3/11/9;
 
-  background: center / cover no-repeat url(${coinsBackground});
+  background: center / cover no-repeat url(${islandBackground});
   background-position: bottom;
 
   overflow: hidden;
