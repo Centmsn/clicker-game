@@ -4,15 +4,18 @@ import Button, { ButtonSizes } from "components/generics/Button";
 import Checkbox from "components/generics/Checkbox";
 import { useAppSelector } from "hooks/useAppSelector";
 import { saveItemToLS } from "utils/localStorage/saveItem";
-import { LocalStorageKeys } from "utils/localStorage/constants";
+import { LocalStorageKeys, LOCAL_STORAGE_APP_KEY } from "utils/localStorage/constants";
 import { captureStoreState } from "utils/captureStoreState";
 import ToastStackContext from "contexts/ToastStackContext";
 import GameContext from "contexts/GameContext";
 import * as P from "./parts";
 import Modal from "components/generics/Modal";
+import { useAppDispatch } from "hooks/useAppDispatch";
+import { resetHeroesState, resetWalletState } from "state";
 
 const OptionsTab = () => {
   const appState = useAppSelector((state) => state);
+  const dispatch = useAppDispatch();
   const { openNewToast } = useContext(ToastStackContext);
   const { startAutosave, stopAutosave, isAutosaveEnabled } = useContext(GameContext);
   const [displayConfirm, setDisplayConfirm] = useState(false);
@@ -23,8 +26,10 @@ const OptionsTab = () => {
   };
 
   const handleRestartGame = () => {
-    localStorage.removeItem(LocalStorageKeys.gameState);
+    localStorage.removeItem(LOCAL_STORAGE_APP_KEY);
     openNewToast("Game restarted!", ToastVariants.RED);
+    dispatch(resetWalletState());
+    dispatch(resetHeroesState());
   };
 
   const toggleAutosave = () => {

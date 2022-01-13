@@ -18,7 +18,7 @@ export interface WalletState {
 }
 
 const savedInitialState: RootState = JSON.parse(getItemFromLS(LocalStorageKeys.gameState) || "{}");
-const defaultInitialState = {
+export const defaultInitialState = {
   value: INITIAL_WALLET_VALUE,
   incrementPerSecond: INITIAL_INCREMENT,
   goldPerClick: INITIAL_GOLD_PER_CLICK,

@@ -1,5 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { INITIAL_INCREMENT, INITIAL_WALLET_VALUE, MIN_INCREMENT, MIN_WALLET_VALUE, initialState } from "./constants";
+import {
+  INITIAL_INCREMENT,
+  INITIAL_WALLET_VALUE,
+  MIN_INCREMENT,
+  MIN_WALLET_VALUE,
+  initialState,
+  defaultInitialState,
+} from "./constants";
 
 export const mainWalletSlice = createSlice({
   name: "MainWallet",
@@ -31,6 +38,9 @@ export const mainWalletSlice = createSlice({
     setUpgradesPerClick: (state, action: PayloadAction<number>) => {
       state.upgradesPerClick = action.payload;
     },
+    resetWalletState: () => {
+      return defaultInitialState;
+    },
   },
 });
 
@@ -42,6 +52,7 @@ export const {
   decreaseIncrement,
   increaseIncrement,
   setUpgradesPerClick,
+  resetWalletState,
 } = mainWalletSlice.actions;
 
 export default mainWalletSlice.reducer;
