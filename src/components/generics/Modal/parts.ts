@@ -17,6 +17,7 @@ export const ModalWindow = styled.div`
   align-items: center;
 
   display: flex;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,18 +28,7 @@ export const ModalWindow = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const CloseButton = styled.span`
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  font-size: ${({ theme }) => theme.styles.font_sizes.large};
-
-  transition: ${({ theme }) => theme.styles.transitions.fast};
-
-  &:hover {
-    transform: scale(1.1);
-
-    cursor: pointer;
-  }
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;

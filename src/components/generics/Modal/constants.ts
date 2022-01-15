@@ -1,4 +1,5 @@
 export interface ModalProps {
-  children: any;
   isVisible: boolean;
+  setVisible?: (arg: boolean) => void;
+  onConfirm?: () => void;
 }

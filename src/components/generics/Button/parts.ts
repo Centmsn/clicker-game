@@ -7,6 +7,10 @@ const getBtnVariant = (variant: string | undefined) => {
       return Variants.primary;
     case "SECONDARY":
       return Variants.secondary;
+    case "CLOSE":
+      return Variants.close;
+    case "CONFIRM":
+      return Variants.confirm;
     default:
       return;
   }

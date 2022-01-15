@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { calcPrice } from "utils/calcPrice";
-import { initialState } from "./constants";
+import { defaultInitialState, initialState } from "./constants";
 import { validateAmount } from "./utils";
 
 export const heroesSlice = createSlice({
@@ -45,9 +45,13 @@ export const heroesSlice = createSlice({
         selectedHero.price = calcPrice(selectedHero.price, selectedHero.heroPriceIncrement, amount);
       }
     },
+
+    resetHeroesState: () => {
+      return defaultInitialState;
+    },
   },
 });
 
-export const { increaseHeroLevel, increaseUpgradeLevel } = heroesSlice.actions;
+export const { increaseHeroLevel, increaseUpgradeLevel, resetHeroesState } = heroesSlice.actions;
 
 export default heroesSlice.reducer;
