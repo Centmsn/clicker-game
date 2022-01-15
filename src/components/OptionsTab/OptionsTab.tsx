@@ -18,7 +18,7 @@ const OptionsTab = () => {
   const dispatch = useAppDispatch();
   const { openNewToast } = useContext(ToastStackContext);
   const { startAutosave, stopAutosave, isAutosaveEnabled } = useContext(GameContext);
-  const [displayConfirm, setDisplayConfirm] = useState(false);
+  const [displayResetGameConfirmation, setDisplayResetGameConfirmation] = useState(false);
 
   const handleSaveGame = () => {
     saveItemToLS(LocalStorageKeys.gameState, captureStoreState(appState));
@@ -58,8 +58,12 @@ const OptionsTab = () => {
         </Button>
       </P.OptionWrapper>
 
-      {displayConfirm && (
-        <Modal callback={handleRestartGame} setVisible={setDisplayConfirm} isVisible={displayConfirm}>
+      {displayResetGameConfirmation && (
+        <Modal
+          onConfirm={handleRestartGame}
+          setVisible={setDisplayResetGameConfirmation}
+          isVisible={displayResetGameConfirmation}
+        >
           Are you sure restart the game ?
         </Modal>
       )}
@@ -67,8 +71,8 @@ const OptionsTab = () => {
       <P.OptionWrapper>
         <P.Description>Click to restart game</P.Description>
         <Button
-          onClick={() => setDisplayConfirm((value) => !value)}
-          isDisabled={displayConfirm}
+          onClick={() => setDisplayResetGameConfirmation((value) => !value)}
+          isDisabled={displayResetGameConfirmation}
           size={ButtonSizes.LARGE}
         >
           Restart game

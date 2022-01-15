@@ -1,31 +1,34 @@
-import { useState } from "react";
+import { PropsWithChildren, useState } from "react";
+import Button from "../Button";
 import { ModalProps } from "./constants";
+import { ButtonSizes } from "../Button";
+import { ButtonVariants } from "../Button";
 import * as P from "./parts";
 
-const Modal = ({ children, isVisible, setVisible, callback }: ModalProps) => {
-  const [isClose, setIsClose] = useState(!isVisible);
-
+const Modal = ({ children, isVisible, setVisible, onConfirm }: PropsWithChildren<ModalProps>) => {
   const onClose = () => {
-    if (setVisible) setVisible(false);
-    setIsClose(isVisible);
+    if (setVisible) setVisible(!isVisible);
   };
 
   const onConfirmed = () => {
-    if (callback) callback();
-    if (setVisible) setVisible(false);
-    setIsClose(isVisible);
+    if (onConfirm) onConfirm();
+    if (setVisible) setVisible(!isVisible);
   };
 
   return (
     <>
-      <P.Overlay></P.Overlay>
+      <P.Overlay />
       <P.ModalWindow>
         {children}
-        <P.CloseButton onClick={onClose}>✖️</P.CloseButton>
-        <P.Confirmation>
-          <P.ConfirmBtn onClick={onConfirmed}>YES</P.ConfirmBtn>
-          <P.ConfirmBtn onClick={onClose}>NO</P.ConfirmBtn>
-        </P.Confirmation>
+        <Button onClick={onClose} size={ButtonSizes.SMALL} variant={ButtonVariants.CLOSE} />
+        <P.ButtonsContainer>
+          <Button onClick={onConfirmed} size={ButtonSizes.SMALL} variant={ButtonVariants.CONFIRM}>
+            yes
+          </Button>
+          <Button onClick={onClose} size={ButtonSizes.SMALL} variant={ButtonVariants.CONFIRM}>
+            no
+          </Button>
+        </P.ButtonsContainer>
       </P.ModalWindow>
     </>
   );
