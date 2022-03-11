@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/clicker-game/static/js/main.966fb940.chunk.js",
+    "main.js.map": "/clicker-game/static/js/main.966fb940.chunk.js.map",
+    "runtime-main.js": "/clicker-game/static/js/runtime-main.dff83f23.js",
+    "runtime-main.js.map": "/clicker-game/static/js/runtime-main.dff83f23.js.map",
+    "static/js/2.75c08815.chunk.js": "/clicker-game/static/js/2.75c08815.chunk.js",
+    "static/js/2.75c08815.chunk.js.map": "/clicker-game/static/js/2.75c08815.chunk.js.map",
+    "index.html": "/clicker-game/index.html",
+    "static/js/2.75c08815.chunk.js.LICENSE.txt": "/clicker-game/static/js/2.75c08815.chunk.js.LICENSE.txt",
+    "static/js/main.966fb940.chunk.js.LICENSE.txt": "/clicker-game/static/js/main.966fb940.chunk.js.LICENSE.txt",
+    "static/media/islandBackground.fe7712c3.gif": "/clicker-game/static/media/islandBackground.fe7712c3.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dff83f23.js",
+    "static/js/2.75c08815.chunk.js",
+    "static/js/main.966fb940.chunk.js"
+  ]
+}
